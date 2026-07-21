@@ -88,13 +88,13 @@ body {
 
 /* Header & Navigation */
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
-  background-color: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-bottom: none;
+  background-color: rgba(16, 15, 13, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
   z-index: 100;
   transition: all 0.3s ease;
 }
