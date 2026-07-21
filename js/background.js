@@ -41,7 +41,7 @@ class LiveBackground {
             let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
             let directionX = (Math.random() * 0.4) - 0.2;
             let directionY = (Math.random() * 0.4) - 0.2;
-            let color = 'rgba(255, 255, 255, 0.15)';
+            let color = 'rgba(212, 175, 55, 0.3)';
 
             this.particles.push(new Particle(this.ctx, x, y, directionX, directionY, size, color, this.canvas, this.mouse));
         }
@@ -64,14 +64,15 @@ class LiveBackground {
 
     connect() {
         let opacityValue = 1;
+        let connectionDistance = (this.canvas.width / 7) * (this.canvas.height / 7);
         for (let a = 0; a < this.particles.length; a++) {
             for (let b = a; b < this.particles.length; b++) {
                 let distance = ((this.particles[a].x - this.particles[b].x) * (this.particles[a].x - this.particles[b].x))
                 + ((this.particles[a].y - this.particles[b].y) * (this.particles[a].y - this.particles[b].y));
                 
-                if (distance < (this.canvas.width/7) * (this.canvas.height/7)) {
-                    opacityValue = 1 - (distance / 20000);
-                    this.ctx.strokeStyle = `rgba(255, 255, 255, ${opacityValue * 0.15})`;
+                if (distance < connectionDistance) {
+                    let opacityValue = 1 - (distance / connectionDistance);
+                    this.ctx.strokeStyle = `rgba(212, 175, 55, ${opacityValue * 0.4})`;
                     this.ctx.lineWidth = 1;
                     this.ctx.beginPath();
                     this.ctx.moveTo(this.particles[a].x, this.particles[a].y);

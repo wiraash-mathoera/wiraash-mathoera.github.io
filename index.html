@@ -3,87 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Creative Developer</title>
+    <title>Wiraash Mathoera | Digital Innovation in Suriname</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body data-theme="dark">
     <!-- Live Background -->
-    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; opacity: 0.7;"></canvas>
+    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -3; pointer-events: none; opacity: 0.15;"></canvas>
 
-    <nav class="navbar">
+    <!-- Ambient Glowing Orbs -->
+    <div class="ambient-container">
+        <div class="ambient-orb orb-1"></div>
+        <div class="ambient-orb orb-2"></div>
+    </div>
+
+    <header class="navbar">
         <div class="container nav-container">
-            <a href="./index.html" class="nav-logo">Wiraash Mathoera</a>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            <a href="./index.html" class="nav-logo">SURI<span>LINE</span></a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="./index.html" class="nav-link">Home</a></li>
+                <li><a href="./index.html" class="nav-link" style="color: var(--text-primary);">Home</a></li>
                 <li><a href="./about.html" class="nav-link">About</a></li>
                 <li><a href="./work.html" class="nav-link">Work</a></li>
                 <li><a href="./contact.html" class="nav-link">Contact</a></li>
-                <li>
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
-                        ◐
-                    </button>
-                </li>
             </ul>
         </div>
-    </nav>
+    </header>
 
-    <main class="container" style="padding-top: 140px; padding-bottom: 80px;">
+    <main class="container">
         <!-- Hero Section -->
-        <section style="display: flex; flex-direction: column; gap: 3rem; margin-bottom: 8rem;">
-            <div style="display: flex; align-items: center; gap: 2rem;">
-                <img src="./img/profile.jpg" alt="Wiraash Mathoera" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-color);">
-                <span class="tag" style="margin: 0; font-size: 1rem; border-color: var(--text-primary); color: var(--text-primary);">Wiraash Mathoera</span>
+        <section style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; min-height: 70vh; padding-top: 2rem;">
+            <div style="max-width: 800px; position: relative; z-index: 10;">
+                <h1 class="font-serif" style="font-size: clamp(3.5rem, 8vw, 7.5rem); font-weight: 500; line-height: 1.05; margin-bottom: 2rem; letter-spacing: -0.02em;">
+                    Wiraash <span class="italic">Mathoera</span>
+                </h1>
+                <h2 style="font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 400; color: var(--text-primary); margin-bottom: 2rem; letter-spacing: -0.01em;">
+                    Digital Innovation in Suriname
+                </h2>
+                
+                <div style="color: var(--text-secondary); font-size: 1.15rem; max-width: 650px; margin-bottom: 3rem; line-height: 1.8; font-weight: 300;">
+                    <p style="margin-bottom: 1.5rem;">I navigate the intersection of code, design, and product development. I currently work as a Project and Test Coordinator at Telesur while wrapping up my Bachelor's in Software Engineering.</p>
+                    <p>My passion is making technology accessible to everyone. As the founder of <a href="#" style="color: var(--text-primary); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--accent-gold);">Cyberpad Studio</a>, <a href="#" style="color: var(--text-primary); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--accent-gold);">SuriKoers</a> en <a href="#" style="color: var(--text-primary); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--accent-gold);">SuriLine</a>, I build platforms that solve real problems with elegant solutions.</p>
+                </div>
+                
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="./work.html" class="btn btn-primary" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid var(--border-color); color: var(--text-primary);">View Projects</a>
+                    <a href="./about.html" class="btn btn-outline" style="border: none; border-bottom: 1px solid var(--border-color); border-radius: 0; padding-left: 0; padding-right: 0;">Read Story &rarr;</a>
+                </div>
             </div>
             
-            <div style="max-width: 800px;">
-                <h1 style="margin-bottom: 2rem; font-size: clamp(3rem, 7vw, 6rem); letter-spacing: -0.05em; line-height: 1.05;">
-                    Software Engineer <br> & Founder.
-                </h1>
-                <p style="color: var(--text-secondary); font-size: 1.25rem; max-width: 600px; margin-bottom: 3rem; line-height: 1.6;">
-                    I navigate the intersection of code, design, and product development. My passion is making technology accessible to everyone by building platforms that solve real problems with elegant solutions.
-                </p>
-                <div style="display: flex; gap: 1rem;">
-                    <a href="./work.html" style="padding: 1rem 2rem; background: var(--text-primary); color: var(--bg-color); font-weight: 600; border-radius: 4px; font-size: 1.1rem;">View Projects</a>
-                    <a href="./about.html" style="padding: 1rem 2rem; border: 1px solid var(--border-color); color: var(--text-primary); font-weight: 600; border-radius: 4px; font-size: 1.1rem;">Read Story</a>
-                </div>
-            </div>
-
-            <div style="margin-top: 4rem;">
-                <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 1rem;">Core Focus</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                    <span class="tag">Software Engineering</span>
-                    <span class="tag">Project Coordination</span>
-                    <span class="tag">Digital Innovation</span>
-                    <span class="tag">Product Development</span>
-                </div>
+            <div style="position: absolute; right: 0; top: 15%; width: 45%; max-width: 500px; z-index: 5; opacity: 0.9;">
+                <!-- Using a mask image to blend the profile picture nicely into the dark background -->
+                <img src="./img/profile.jpg" alt="Wiraash Mathoera" style="width: 100%; height: auto; object-fit: cover; -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%); mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);">
             </div>
         </section>
 
-        <!-- Experience & Roles Section -->
-        <section>
-            <h2 style="font-size: 2.5rem; letter-spacing: -0.03em; margin-bottom: 3rem;">Current Roles</h2>
-            <div>
-                <div class="card" style="display: flex; flex-direction: column; gap: 1rem; padding: 2.5rem 0;">
-                    <h3 style="font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em;">Project & Test Coordinator <span style="color: var(--text-secondary); font-weight: 400;">at Telesur</span></h3>
-                    <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 650px;">Ensuring quality and coordination in telecom projects. Bridging the gap between technical execution and business needs.</p>
+        <!-- Experience & Focus Section -->
+        <section class="section-divider">
+            <h3 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; color: var(--accent-gold); margin-bottom: 3rem;">Experience & Focus</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                <!-- Item 1 -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--accent-gold); opacity: 0.8;">✦</span>
+                        <h4 class="font-serif italic" style="font-size: 1.5rem; color: var(--text-primary);">SuriLine</h4>
+                    </div>
+                    <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">Founder</p>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Building the digital infrastructure for local discovery.</p>
                 </div>
-                <div class="card" style="display: flex; flex-direction: column; gap: 1rem; padding: 2.5rem 0;">
-                    <h3 style="font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em;">Founder <span style="color: var(--text-secondary); font-weight: 400;">at SuriLine, SuriKoers & Cyberpad Studio</span></h3>
-                    <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 650px;">Building digital infrastructure for local discovery and creating futuristic online studios for music producers.</p>
+                
+                <!-- Item 2 -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--accent-gold); opacity: 0.8;">✦</span>
+                        <h4 class="font-serif italic" style="font-size: 1.5rem; color: var(--text-primary);">SuriKoers</h4>
+                    </div>
+                    <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">Founder</p>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Simplifying currency exchange rates in Suriname.</p>
+                </div>
+                
+                <!-- Item 3 -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--accent-gold); opacity: 0.8;">✦</span>
+                        <h4 class="font-serif italic" style="font-size: 1.5rem; color: var(--text-primary);">Cyberpad Studio</h4>
+                    </div>
+                    <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">Founder</p>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">A futuristic online studio where producers not only make beats, but can also instantly share and collaborate.</p>
+                </div>
+                
+                <!-- Item 4 -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--accent-gold); opacity: 0.8;">✦</span>
+                        <h4 class="font-serif italic" style="font-size: 1.5rem; color: var(--text-primary);">Telesur</h4>
+                    </div>
+                    <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">P/T Coordinator</p>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Ensuring quality and coordination in telecom projects.</p>
+                </div>
+                
+                <!-- Item 5 -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--accent-gold); opacity: 0.8;">✦</span>
+                        <h4 class="font-serif italic" style="font-size: 1.5rem; color: var(--text-primary);">Education</h4>
+                    </div>
+                    <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">B.Sc. Software Engineering</p>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Currently in the final graduation phase.</p>
+                </div>
+                
+                <!-- Item 6 -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--accent-gold); opacity: 0.8;">✦</span>
+                        <h4 class="font-serif italic" style="font-size: 1.5rem; color: var(--text-primary);">Passion</h4>
+                    </div>
+                    <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">Digital Innovation</p>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Solving real problems through elegant code.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer container">
-        <div class="footer-text">© 2026 Wiraash Mathoera</div>
-        <div class="footer-socials">
-            <a href="https://github.com" target="_blank">GitHub</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Wiraash Mathoera. Designed by WM &middot; Made in Suriname.</p>
         </div>
     </footer>
-
-    <script src="./js/main.js"></script>
+    
+    <script src="./js/background.js"></script>
+    <script>
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
