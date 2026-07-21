@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiraash Mathoera | Digital Innovation in Suriname</title>
+    <title>Wiraash Mathoera | Product Engineer & Digital Innovator</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body data-theme="dark">
-    <!-- Live Background -->
+    <!-- Live Interactive Background Canvas -->
     <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -3; pointer-events: none; opacity: 0.15;"></canvas>
 
     <!-- Ambient Glowing Orbs -->
@@ -16,120 +16,187 @@
         <div class="ambient-orb orb-2"></div>
     </div>
 
+    <!-- Header & Navigation -->
     <header class="navbar">
-        <div class="container nav-container">
-
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <div class="container nav-container" style="justify-content: flex-end;">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
             </button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="./index.html" class="nav-link" style="color: var(--text-primary);">Home</a></li>
-                <li><a href="./about.html" class="nav-link">About</a></li>
+                <li><a href="./index.html" class="nav-link active">Home</a></li>
                 <li><a href="./work.html" class="nav-link">Work</a></li>
+                <li><a href="./about.html" class="nav-link">About</a></li>
                 <li><a href="./contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </header>
 
     <main class="container">
-        <!-- Hero Section -->
-        <section style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; min-height: 70vh; padding-top: 2rem;">
-            <div style="max-width: 800px; position: relative; z-index: 10;">
-                <h1 class="font-serif" style="font-size: clamp(3.5rem, 8vw, 7.5rem); font-weight: 500; line-height: 1.05; margin-bottom: 2rem; letter-spacing: -0.02em;">
-                    Wiraash <span class="italic">Mathoera</span>
+        <!-- Hero Section (Paul Bakaus Grid Layout) -->
+        <section style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 3.5rem; align-items: center; min-height: 70vh; padding-top: 2rem; margin-bottom: 5rem;">
+            <div style="position: relative; z-index: 10;">
+                <h1 class="font-serif" style="font-size: clamp(3.5rem, 7.5vw, 6.5rem); font-weight: 500; line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: -0.02em;">
+                    Wiraash <span class="italic text-accent">Mathoera</span>
                 </h1>
-                <h2 style="font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 400; color: var(--text-primary); margin-bottom: 2rem; letter-spacing: -0.01em;">
-                    Digital Innovation in Suriname
-                </h2>
+                <p style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 400; color: var(--text-primary); margin-bottom: 2rem; letter-spacing: -0.01em;">
+                    Product Engineer &amp; Digital Innovator.
+                </p>
                 
-                <div style="color: var(--text-secondary); font-size: 1.15rem; max-width: 650px; margin-bottom: 3rem; line-height: 1.8; font-weight: 300;">
-                    <p style="margin-bottom: 1.5rem;">I navigate the intersection of code, design, and product development. I currently work as a Project and Test Coordinator at Telesur while wrapping up my Bachelor's in Software Engineering.</p>
-                    <p>My passion is making technology accessible to everyone. As the founder of <a href="#" style="color: var(--text-primary); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--accent-gold);">Cyberpad Studio</a>, <a href="#" style="color: var(--text-primary); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--accent-gold);">SuriKoers</a> en <a href="#" style="color: var(--text-primary); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--accent-gold);">SuriLine</a>, I build platforms that solve real problems with elegant solutions.</p>
+                <div style="color: var(--text-secondary); font-size: 1.15rem; max-width: 650px; margin-bottom: 2.5rem; line-height: 1.8; font-weight: 300;">
+                    <p style="margin-bottom: 1.25rem;">
+                        I move between <strong style="color: var(--text-primary); font-weight: 500;">code</strong>, <strong style="color: var(--text-primary); font-weight: 500;">design</strong>, and <strong style="color: var(--text-primary); font-weight: 500;">product</strong>. I am currently completing my Software Engineering degree at UNASAT while working as a Coordinator at Telesur.
+                    </p>
+                    <p>
+                        As founder of <strong style="color: var(--text-primary); font-weight: 500;">SuriLine</strong>, <strong style="color: var(--text-primary); font-weight: 500;">SuriKoers</strong>, and <strong style="color: var(--text-primary); font-weight: 500;">Cyberpad Studio</strong>, I build digital platforms that solve real problems with simple, elegant solutions.
+                    </p>
                 </div>
                 
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="./work.html" class="btn btn-primary" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid var(--border-color); color: var(--text-primary);">View Projects</a>
-                    <a href="./about.html" class="btn btn-outline" style="border: none; border-bottom: 1px solid var(--border-color); border-radius: 0; padding-left: 0; padding-right: 0;">Read Story &rarr;</a>
+                <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+                    <a href="./work.html" class="btn btn-primary">Explore Projects &rarr;</a>
+                    <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub Repositories &nearr;</a>
                 </div>
             </div>
             
-            <div style="position: absolute; right: 0; top: 15%; width: 45%; max-width: 500px; z-index: 5; opacity: 0.9;">
-                <!-- Using a mask image to blend the profile picture nicely into the dark background -->
-                <img src="./img/profile.jpg" alt="Wiraash Mathoera" style="width: 100%; height: auto; object-fit: cover; -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%); mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);">
+            <div style="display: flex; justify-content: center; position: relative;">
+                <div style="width: 100%; max-width: 420px; aspect-ratio: 3/4; border-radius: 16px; overflow: hidden; border: 1px solid var(--card-border); background: var(--card-bg);">
+                    <img src="./img/profile.jpg" alt="Wiraash Mathoera" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95);">
+                </div>
             </div>
         </section>
 
-        <!-- Experience & Focus Section -->
+        <!-- Currently Building Section (Bento Grid) -->
         <section class="section-divider">
-            <h3 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; color: var(--accent-gold); margin-bottom: 3rem;">Experience & Focus</h3>
+            <span class="section-label">Currently Building</span>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
-                <!-- Item 1 -->
-                <div>
-                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                        <span style="color: var(--accent-gold); opacity: 0.8;">✦</span>
-                        <h4 class="font-serif italic" style="font-size: 1.5rem; color: var(--text-primary);">SuriLine</h4>
+            <div class="bento-grid">
+                <!-- Bento 1: SuriLine -->
+                <div class="bento-item">
+                    <div>
+                        <h2 class="bento-title">
+                            <span style="color: var(--accent-gold);">✦</span>
+                            <a href="https://suriline.vercel.app/" target="_blank" rel="noopener noreferrer">SuriLine</a>
+                        </h2>
+                        <p class="bento-desc">
+                            Building the digital directory infrastructure for Suriname. Connecting physical businesses, emergency services, and government agencies into a modern, accessible web application.
+                        </p>
                     </div>
-                    <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">Founder</p>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Building the digital infrastructure for local discovery.</p>
+                    <div class="bento-meta">
+                        <a href="https://suriline.vercel.app/" target="_blank" rel="noopener noreferrer">Live Site &nearr;</a>
+                        <span>/</span>
+                        <span>Full-Stack Platform</span>
+                    </div>
                 </div>
-                
-                <!-- Item 2 -->
-                <div>
-                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                        <span style="color: var(--accent-gold); opacity: 0.8;">✦</span>
-                        <h4 class="font-serif italic" style="font-size: 1.5rem; color: var(--text-primary);">SuriKoers</h4>
+
+                <!-- Bento 2: SuriKoers -->
+                <div class="bento-item">
+                    <div>
+                        <h2 class="bento-title">
+                            <span style="color: var(--accent-gold);">✦</span>
+                            <a href="https://surikoers.com" target="_blank" rel="noopener noreferrer">SuriKoers</a>
+                        </h2>
+                        <p class="bento-desc">
+                            Simplifying currency exchange rates in Suriname. Provides a centralized, accurate dashboard to help individuals and local businesses monitor exchange rate changes in real time.
+                        </p>
                     </div>
-                    <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">Founder</p>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Simplifying currency exchange rates in Suriname.</p>
+                    <div class="bento-meta">
+                        <a href="https://surikoers.com" target="_blank" rel="noopener noreferrer">Live Site &nearr;</a>
+                        <span>/</span>
+                        <span>FinTech Dashboard</span>
+                    </div>
                 </div>
-                
-                <!-- Item 3 -->
-                <div>
-                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                        <span style="color: var(--accent-gold); opacity: 0.8;">✦</span>
-                        <h4 class="font-serif italic" style="font-size: 1.5rem; color: var(--text-primary);">Cyberpad Studio</h4>
+
+                <!-- Bento 3: Cyberpad Studio -->
+                <div class="bento-item">
+                    <div>
+                        <h2 class="bento-title">
+                            <span style="color: var(--accent-gold);">✦</span>
+                            <a href="https://cyberpad-studio.vercel.app/html/login.html" target="_blank" rel="noopener noreferrer">Cyberpad Studio</a>
+                        </h2>
+                        <p class="bento-desc">
+                            A futuristic online studio where music producers not only produce beats, but can instantly share, showcase, and collaborate in a unified digital workspace.
+                        </p>
                     </div>
-                    <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">Founder</p>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">A futuristic online studio where producers not only make beats, but can also instantly share and collaborate.</p>
+                    <div class="bento-meta">
+                        <a href="https://cyberpad-studio.vercel.app/html/login.html" target="_blank" rel="noopener noreferrer">Live Site &nearr;</a>
+                        <span>/</span>
+                        <span>Audio Collaboration</span>
+                    </div>
                 </div>
-                
-                <!-- Item 4 -->
-                <div>
-                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                        <span style="color: var(--accent-gold); opacity: 0.8;">✦</span>
-                        <h4 class="font-serif italic" style="font-size: 1.5rem; color: var(--text-primary);">Telesur</h4>
+
+                <!-- Bento 4: GitHub Repositories -->
+                <div class="bento-item">
+                    <div>
+                        <h2 class="bento-title">
+                            <span style="color: var(--accent-gold);">✦</span>
+                            <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub Projects</a>
+                        </h2>
+                        <p class="bento-desc">
+                            Explore my open-source code repositories, software engineering experiments, and algorithm implementations hosted on GitHub.
+                        </p>
                     </div>
-                    <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">P/T Coordinator</p>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Ensuring quality and coordination in telecom projects.</p>
+                    <div class="bento-meta">
+                        <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank" rel="noopener noreferrer">View Repositories &nearr;</a>
+                        <span>/</span>
+                        <span>Open Source</span>
+                    </div>
                 </div>
-                
-                <!-- Item 5 -->
-                <div>
-                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                        <span style="color: var(--accent-gold); opacity: 0.8;">✦</span>
-                        <h4 class="font-serif italic" style="font-size: 1.5rem; color: var(--text-primary);">Education</h4>
+            </div>
+        </section>
+
+        <!-- Career Timeline Section (Paul Bakaus Career Style) -->
+        <section class="section-divider">
+            <span class="section-label">Career &amp; Journey</span>
+            
+            <div class="timeline-wrap">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2019</span>
+                        <div class="timeline-role">Sales Representative &amp; Frontline Services</div>
+                        <div class="timeline-desc">Smart ConneXxionZ &amp; Telesur &mdash; Managed customer relations, sales, cashier operations, and SAP ERP / QuickBooks data processing.</div>
                     </div>
-                    <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">B.Sc. Software Engineering</p>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">University of Applied Sciences and Technology Suriname (UNASAT).</p>
-                </div>
-                
-                <!-- Item 6 -->
-                <div>
-                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                        <span style="color: var(--accent-gold); opacity: 0.8;">✦</span>
-                        <h4 class="font-serif italic" style="font-size: 1.5rem; color: var(--text-primary);">Tech &amp; Systems</h4>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">2020</span>
+                        <div class="timeline-role">Frontdesk Coordinator</div>
+                        <div class="timeline-desc">Laxani &mdash; Managed customer orders, quotation generation, inventory logistics, and customer service operations.</div>
                     </div>
-                    <p style="font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">CMS, ERP &amp; Software</p>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">WordPress, Shopify, Squarespace, Wix, SAP ERP, QuickBooks &amp; MS Office.</p>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">2021</span>
+                        <div class="timeline-role">B.Sc. Software Engineering</div>
+                        <div class="timeline-desc">UNASAT &mdash; University of Applied Sciences and Technology Suriname. Deep diving into algorithms, system design, and software engineering principles.</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-year">2022</span>
+                        <div class="timeline-role">Front Officer &amp; Telecom Coordinator</div>
+                        <div class="timeline-desc">Telesur &mdash; Customer modem management, GSM/data services, sales coordination, and telecom project testing.</div>
+                    </div>
+
+                    <div class="timeline-item is-current">
+                        <span class="timeline-year">Now</span>
+                        <div class="timeline-role">Founder &amp; Product Engineer</div>
+                        <div class="timeline-desc">SuriLine, SuriKoers &amp; Cyberpad Studio &mdash; Building modern web platforms and digital infrastructure for Suriname.</div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer (Paul Bakaus Footer Style) -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Wiraash Mathoera. Designed by WM &middot; Made in Suriname.</p>
+        <div class="container footer-content">
+            <div>
+                <p style="color: var(--text-primary); font-weight: 500; margin-bottom: 0.25rem;">Wiraash Mathoera</p>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/wiraash-mathoera-642bb9243/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="./contact.html">Email</a>
+                <a href="./about.html">About</a>
+            </div>
         </div>
     </footer>
     

@@ -17,111 +17,93 @@
         <div class="ambient-orb orb-2"></div>
     </div>
 
+    <!-- Header & Navigation -->
     <header class="navbar">
-        <div class="container nav-container">
-
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <div class="container nav-container" style="justify-content: flex-end;">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
             </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="./index.html" class="nav-link">Home</a></li>
-                <li><a href="./about.html" class="nav-link" style="color: var(--text-primary);">About</a></li>
                 <li><a href="./work.html" class="nav-link">Work</a></li>
+                <li><a href="./about.html" class="nav-link active">About</a></li>
                 <li><a href="./contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </header>
 
     <main class="container">
-        <!-- Origin Story -->
-        <section style="display: grid; grid-template-columns: 1fr; gap: 4rem; padding-top: 4rem; margin-bottom: 6rem;">
-            <div>
-                <h3 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; color: var(--accent-gold); margin-bottom: 1.5rem;">The Profile</h3>
-                <h1 class="font-serif" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500; line-height: 1.1; color: var(--text-primary); margin-bottom: 2rem;">
-                    Driven by solutions, <span class="italic text-accent">powered by code.</span>
-                </h1>
-            </div>
+        <!-- Profile Header -->
+        <section style="padding-top: 2rem; margin-bottom: 5rem;">
+            <span class="section-label">Biography &amp; Background</span>
+            <h1 class="font-serif" style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 500; line-height: 1.1; color: var(--text-primary); margin-bottom: 2rem;">
+                Driven by solutions, <span class="italic text-accent">powered by code.</span>
+            </h1>
             
             <div style="color: var(--text-secondary); font-size: 1.2rem; font-weight: 300; line-height: 1.8; max-width: 800px; display: flex; flex-direction: column; gap: 1.5rem;">
-                <p>I am a hardworking, motivated software engineering student and professional based in Suriname. Whether collaborating in teams or working independently, I focus on solving complex problems and turning challenges into opportunities for continuous learning.</p>
-                <p>As the founder of <strong>SuriLine</strong>, <strong>SuriKoers</strong>, and <strong>Cyberpad Studio</strong>, my mission is to modernize digital infrastructure in Suriname and create seamless, accessible platforms for everyday users and local businesses.</p>
+                <p>
+                    I am a hardworking, motivated software engineering student and product developer based in Suriname. Whether collaborating in multidisciplinary teams or building independently, I focus on solving complex real-world problems and turning daily friction into opportunities for digital innovation.
+                </p>
+                <p>
+                    As the founder of <strong style="color: var(--text-primary); font-weight: 500;">SuriLine</strong>, <strong style="color: var(--text-primary); font-weight: 500;">SuriKoers</strong>, and <strong style="color: var(--text-primary); font-weight: 500;">Cyberpad Studio</strong>, my mission is to modernize digital infrastructure in Suriname and create seamless, accessible platforms for everyday users, local businesses, and creators.
+                </p>
             </div>
         </section>
 
-        <!-- Work Experience Timeline -->
+        <!-- The Origin Story & Mission -->
         <section class="section-divider">
-            <h3 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; color: var(--accent-gold); margin-bottom: 3rem;">Professional Experience</h3>
-            
-            <div style="display: flex; flex-direction: column; gap: 3rem; max-width: 900px;">
-                <!-- Job 1 -->
-                <div style="display: grid; grid-template-columns: 180px 1fr; gap: 2rem;">
-                    <div style="font-size: 0.9rem; color: var(--accent-gold); font-weight: 500;">2022 &mdash; Present</div>
-                    <div>
-                        <h4 class="font-serif" style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 0.25rem;">Front Officer / P/T Coordinator &middot; <span class="italic text-accent">Telesur</span></h4>
-                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-top: 0.5rem;">
-                            Managing customer assistance for modem systems, GSM, and data services. Overseeing service sales, customer information management, cash handling, and telecom project coordination.
-                        </p>
-                    </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem;">
+                <div>
+                    <span class="section-label" style="margin-bottom: 1rem;">The Origin Story</span>
+                    <h2 class="font-serif" style="font-size: 2rem; color: var(--text-primary); margin-bottom: 1.5rem;">Why I started <span class="italic text-accent">SuriLine</span></h2>
+                    <p style="font-size: 1.05rem; color: var(--text-secondary); font-weight: 300; line-height: 1.7; margin-bottom: 1rem;">
+                        Working as a Project &amp; Test Coordinator at Telesur, and completing my Bachelor in Software Engineering, I noticed recurring friction in daily life in Suriname. Finding businesses, emergency contacts, or government agencies was harder than it needed to be.
+                    </p>
+                    <p style="font-size: 1.05rem; color: var(--text-secondary); font-weight: 300; line-height: 1.7;">
+                        SuriLine was born to build a modern digital guide making local discovery fast, transparent, and accessible for everyone.
+                    </p>
                 </div>
 
-                <hr style="border: none; border-top: 1px solid var(--border-color);">
-
-                <!-- Job 2 -->
-                <div style="display: grid; grid-template-columns: 180px 1fr; gap: 2rem;">
-                    <div style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 500;">2020 &mdash; 2022</div>
-                    <div>
-                        <h4 class="font-serif" style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 0.25rem;">Frontdesk &middot; <span class="italic">Laxani</span></h4>
-                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-top: 0.5rem;">
-                            Assisted customers with order processing, generated quotes, managed inventory logistics within system software, and provided frontline customer service.
-                        </p>
-                    </div>
-                </div>
-
-                <hr style="border: none; border-top: 1px solid var(--border-color);">
-
-                <!-- Job 3 -->
-                <div style="display: grid; grid-template-columns: 180px 1fr; gap: 2rem;">
-                    <div style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 500;">2019 &mdash; 2020</div>
-                    <div>
-                        <h4 class="font-serif" style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 0.25rem;">Sales Representative &middot; <span class="italic">Smart ConneXxionZ</span></h4>
-                        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-top: 0.5rem;">
-                            Managed retail sales, cashier operations, customer relations follow-ups, and data processing using QuickBooks &amp; SAP ERP software.
-                        </p>
-                    </div>
+                <div>
+                    <span class="section-label" style="margin-bottom: 1rem;">The Mission</span>
+                    <h2 class="font-serif" style="font-size: 2rem; color: var(--text-primary); margin-bottom: 1.5rem;">Digital Accessibility</h2>
+                    <p class="font-serif" style="font-size: 1.5rem; line-height: 1.5; color: var(--text-primary);">
+                        "To organize Suriname's local information and make it universally accessible and useful, bridging the gap between physical businesses and modern digital presence."
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Education Timeline -->
+        <!-- Education Section -->
         <section class="section-divider">
-            <h3 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; color: var(--accent-gold); margin-bottom: 3rem;">Education</h3>
+            <span class="section-label">Education &amp; Qualifications</span>
             
-            <div style="display: flex; flex-direction: column; gap: 2.5rem; max-width: 900px;">
-                <div style="display: grid; grid-template-columns: 180px 1fr; gap: 2rem;">
-                    <div style="font-size: 0.9rem; color: var(--accent-gold); font-weight: 500;">2021 &mdash; Present</div>
+            <div style="display: flex; flex-direction: column; gap: 2.5rem; max-width: 800px;">
+                <div style="display: grid; grid-template-columns: 160px 1fr; gap: 2rem;">
+                    <div style="font-size: 0.9rem; color: var(--accent-gold); font-weight: 700;">2021 &mdash; Present</div>
                     <div>
-                        <h4 class="font-serif" style="font-size: 1.3rem; color: var(--text-primary);">B.Sc. Software Engineering</h4>
+                        <h3 class="font-serif" style="font-size: 1.35rem; color: var(--text-primary);">B.Sc. Software Engineering</h3>
                         <p style="font-size: 0.95rem; color: var(--text-secondary);">University of Applied Sciences and Technology Suriname (UNASAT)</p>
                     </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 180px 1fr; gap: 2rem;">
-                    <div style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 500;">2016 &mdash; 2019</div>
+                <div style="display: grid; grid-template-columns: 160px 1fr; gap: 2rem;">
+                    <div style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 700;">2016 &mdash; 2019</div>
                     <div>
-                        <h4 class="font-serif" style="font-size: 1.3rem; color: var(--text-primary);">HAVO Diploma</h4>
+                        <h3 class="font-serif" style="font-size: 1.35rem; color: var(--text-primary);">HAVO Diploma</h3>
                         <p style="font-size: 0.95rem; color: var(--text-secondary);">Henry N. Hassankhan Scholengemeenschap</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Technical Skills & Platforms -->
-        <section class="section-divider" style="margin-bottom: 6rem;">
-            <h3 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; color: var(--accent-gold); margin-bottom: 3rem;">Skills &amp; Platforms</h3>
+        <!-- Technical Skills & Systems -->
+        <section class="section-divider">
+            <span class="section-label">Software, ERP &amp; CMS Tools</span>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem;">
                 <div>
-                    <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--text-primary); margin-bottom: 1rem;">CMS &amp; Web Builders</h4>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-bottom: 1rem;">CMS &amp; Web Builders</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
                         <span class="tag">WordPress</span>
                         <span class="tag">Shopify</span>
@@ -131,7 +113,7 @@
                 </div>
 
                 <div>
-                    <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--text-primary); margin-bottom: 1rem;">ERP &amp; Software</h4>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-bottom: 1rem;">ERP &amp; Office Software</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
                         <span class="tag">SAP ERP</span>
                         <span class="tag">QuickBooks</span>
@@ -140,7 +122,7 @@
                 </div>
 
                 <div>
-                    <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--text-primary); margin-bottom: 1rem;">Languages</h4>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-bottom: 1rem;">Languages</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
                         <span class="tag">Dutch (Native)</span>
                         <span class="tag">English (Fluent)</span>
@@ -150,9 +132,20 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Wiraash Mathoera. Designed by WM &middot; Made in Suriname.</p>
+        <div class="container footer-content">
+            <div>
+                <p style="color: var(--text-primary); font-weight: 500; margin-bottom: 0.25rem;">Wiraash Mathoera</p>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/wiraash-mathoera-642bb9243/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="./contact.html">Email</a>
+                <a href="./about.html">About</a>
+            </div>
         </div>
     </footer>
     

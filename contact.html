@@ -17,41 +17,49 @@
         <div class="ambient-orb orb-2"></div>
     </div>
 
+    <!-- Header & Navigation -->
     <header class="navbar">
-        <div class="container nav-container">
-
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <div class="container nav-container" style="justify-content: flex-end;">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
             </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="./index.html" class="nav-link">Home</a></li>
-                <li><a href="./about.html" class="nav-link">About</a></li>
                 <li><a href="./work.html" class="nav-link">Work</a></li>
-                <li><a href="./contact.html" class="nav-link" style="color: var(--text-primary);">Contact</a></li>
+                <li><a href="./about.html" class="nav-link">About</a></li>
+                <li><a href="./contact.html" class="nav-link active">Contact</a></li>
             </ul>
         </div>
     </header>
 
     <main class="container">
         <!-- Contact Section -->
-        <section style="display: grid; grid-template-columns: 1fr; gap: 4rem; padding-top: 4rem; margin-bottom: 6rem;">
-            <div>
-                <h3 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; color: var(--accent-gold); margin-bottom: 1.5rem;">Let's Connect</h3>
-                <h1 class="font-serif" style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 500; line-height: 1.1; color: var(--text-primary); margin-bottom: 2rem;">
-                    Get in <span class="italic text-accent">Touch</span>
-                </h1>
-                <p style="font-size: 1.25rem; font-weight: 300; color: var(--text-secondary); max-width: 600px; line-height: 1.6;">
-                    Whether you want to partner with SuriLine, discuss a software project, or chat about tech innovation in Suriname, my inbox is always open.
-                </p>
-            </div>
-            
+        <section style="padding-top: 2rem; margin-bottom: 5rem;">
+            <span class="section-label">Connect &amp; Collaborate</span>
+            <h1 class="font-serif" style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 500; line-height: 1.1; color: var(--text-primary); margin-bottom: 1.5rem;">
+                Get in <span class="italic text-accent">Touch</span>
+            </h1>
+            <p style="font-size: 1.25rem; font-weight: 300; color: var(--text-secondary); max-width: 650px; line-height: 1.6;">
+                Whether you want to partner with SuriLine, discuss a software project, or chat about tech innovation in Suriname, my inbox is always open.
+            </p>
+        </section>
+
+        <section class="section-divider">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem;">
                 
-                <!-- Email & Phone & Location -->
+                <!-- Direct Links -->
                 <div>
-                    <h4 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--text-primary); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Contact Details</h4>
+                    <h3 class="font-serif" style="font-size: 1.75rem; color: var(--text-primary); margin-bottom: 1.5rem;">Digital Channels</h3>
                     
-                    <div style="display: flex; flex-direction: column; gap: 1.75rem;">
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem;">GitHub Repositories</p>
+                            <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: none; font-size: 1.15rem; font-weight: 500; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-primary)'">github.com/wiraash-mathoera &nearr;</a>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem;">LinkedIn Profile</p>
+                            <a href="https://www.linkedin.com/in/wiraash-mathoera-642bb9243/" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: none; font-size: 1.15rem; font-weight: 500; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-primary)'">linkedin.com/in/wiraash-mathoera-642bb9243/ &nearr;</a>
+                        </div>
                         <div>
                             <p style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem;">Email Address</p>
                             <a href="mailto:Wiraash-mathoera@hotmail.com" style="color: var(--text-primary); text-decoration: none; font-size: 1.15rem; font-weight: 500; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-primary)'">Wiraash-mathoera@hotmail.com</a>
@@ -60,36 +68,28 @@
                             <p style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem;">Phone / Mobile</p>
                             <a href="tel:+59708790204" style="color: var(--text-primary); text-decoration: none; font-size: 1.15rem; font-weight: 500; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-primary)'">+597 08790204 / 0367858</a>
                         </div>
-                        <div>
-                            <p style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem;">Location</p>
-                            <p style="color: var(--text-primary); font-size: 1.15rem; font-weight: 500;">Wanica / Paramaribo, Suriname</p>
-                        </div>
-                        <div>
-                            <p style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem;">LinkedIn</p>
-                            <a href="https://linkedin.com/in/wiraashmathoera" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: none; font-size: 1.15rem; font-weight: 500; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-primary)'">linkedin.com/in/wiraashmathoera</a>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Simple Contact Form -->
+                <!-- Message Form -->
                 <div>
-                    <h4 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--text-primary); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Send a Message</h4>
+                    <h3 class="font-serif" style="font-size: 1.75rem; color: var(--text-primary); margin-bottom: 1.5rem;">Send a Message</h3>
                     
                     <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
                         <div>
                             <label for="name" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em;">Name</label>
-                            <input type="text" id="name" name="name" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 4px; font-family: var(--font-sans); outline: none; transition: border-color 0.2s ease;" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--border-color)'">
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 1rem; background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-primary); border-radius: 6px; font-family: var(--font-sans); outline: none; transition: border-color 0.2s ease;" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--card-border)'">
                         </div>
                         <div>
                             <label for="email" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em;">Email</label>
-                            <input type="email" id="email" name="email" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 4px; font-family: var(--font-sans); outline: none; transition: border-color 0.2s ease;" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--border-color)'">
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 1rem; background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-primary); border-radius: 6px; font-family: var(--font-sans); outline: none; transition: border-color 0.2s ease;" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--card-border)'">
                         </div>
                         <div>
                             <label for="message" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em;">Message</label>
-                            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 4px; font-family: var(--font-sans); resize: vertical; outline: none; transition: border-color 0.2s ease;" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--border-color)'"></textarea>
+                            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 1rem; background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-primary); border-radius: 6px; font-family: var(--font-sans); resize: vertical; outline: none; transition: border-color 0.2s ease;" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--card-border)'"></textarea>
                         </div>
-                        <button type="submit" class="font-serif italic" style="padding: 1rem 2rem; background: transparent; border: 1px solid var(--accent-gold); color: var(--accent-gold); font-size: 1.25rem; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; align-self: flex-start;" onmouseover="this.style.background='var(--accent-gold)'; this.style.color='var(--bg-color)'" onmouseout="this.style.background='transparent'; this.style.color='var(--accent-gold)'">
-                            Send Request &rarr;
+                        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
+                            Send Message &rarr;
                         </button>
                     </form>
                 </div>
@@ -97,9 +97,20 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Wiraash Mathoera. Designed by WM &middot; Made in Suriname.</p>
+        <div class="container footer-content">
+            <div>
+                <p style="color: var(--text-primary); font-weight: 500; margin-bottom: 0.25rem;">Wiraash Mathoera</p>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/wiraash-mathoera-642bb9243/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="./contact.html">Email</a>
+                <a href="./about.html">About</a>
+            </div>
         </div>
     </footer>
     

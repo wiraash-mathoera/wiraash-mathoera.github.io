@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work | Wiraash Mathoera</title>
+    <title>Projects &amp; Work | Wiraash Mathoera</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/work.css">
 </head>
@@ -17,16 +17,16 @@
         <div class="ambient-orb orb-2"></div>
     </div>
 
+    <!-- Header & Navigation -->
     <header class="navbar">
-        <div class="container nav-container">
-
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <div class="container nav-container" style="justify-content: flex-end;">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
             </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="./index.html" class="nav-link">Home</a></li>
+                <li><a href="./work.html" class="nav-link active">Work</a></li>
                 <li><a href="./about.html" class="nav-link">About</a></li>
-                <li><a href="./work.html" class="nav-link" style="color: var(--text-primary);">Work</a></li>
                 <li><a href="./contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -34,84 +34,121 @@
 
     <main class="container">
         <!-- Header -->
-        <section style="padding-top: 4rem; margin-bottom: 6rem; max-width: 800px;">
-            <h3 style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.25em; color: var(--accent-gold); margin-bottom: 1.5rem;">Selected Works</h3>
-            <h1 class="font-serif" style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 500; line-height: 1.1; color: var(--text-primary); margin-bottom: 2rem;">
+        <section style="padding-top: 2rem; margin-bottom: 4rem; max-width: 800px;">
+            <span class="section-label">Selected Works &amp; Software</span>
+            <h1 class="font-serif" style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 500; line-height: 1.1; color: var(--text-primary); margin-bottom: 1.5rem;">
                 Digital <span class="italic text-accent">Infrastructure</span>
             </h1>
-            <p style="font-size: 1.25rem; font-weight: 300; color: var(--text-secondary); line-height: 1.6;">Platforms built to solve real problems and modernize daily life in Suriname.</p>
+            <p style="font-size: 1.25rem; font-weight: 300; color: var(--text-secondary); line-height: 1.6;">
+                Platforms and open-source software built to solve real problems and modernize digital discovery in Suriname.
+            </p>
         </section>
 
-        <!-- Projects Grid -->
-        <section style="display: grid; grid-template-columns: 1fr; gap: 6rem;">
+        <!-- Flagship Projects Section -->
+        <section style="display: grid; grid-template-columns: 1fr; gap: 4rem; margin-bottom: 6rem;">
             
             <!-- Project 1: SuriLine -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;">
-                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; position: relative;">
-                    <img src="./img/projects/project-1.jpg" alt="SuriLine" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8; filter: grayscale(50%); transition: all 0.5s ease;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1';" onmouseout="this.style.filter='grayscale(50%)'; this.style.opacity='0.8';">
-                </div>
-                <div>
-                    <h2 class="font-serif italic" style="font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem;">SuriLine</h2>
-                    <p style="font-size: 1.15rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 2rem; line-height: 1.6;">
-                        A digital directory making the discovery of businesses, emergency services, and government agencies in Suriname simple, fast, and universally accessible.
-                    </p>
-                    <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                        <span class="tag">Product Design</span>
-                        <span class="tag">Full-Stack Development</span>
+            <div class="bento-item" style="padding: 2.5rem;">
+                <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 3rem; align-items: center;">
+                    <div>
+                        <span style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Flagship Platform</span>
+                        <h2 class="font-serif" style="font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem;">SuriLine</h2>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 1.75rem; line-height: 1.6;">
+                            Suriname's modern digital guide. A directory application unifying phone numbers, physical locations, emergency services, and government agency contact info into a lightning-fast, accessible web app.
+                        </p>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                            <span class="tag">Full-Stack</span>
+                            <span class="tag">Product Design</span>
+                            <span class="tag">Directory Infrastructure</span>
+                        </div>
+                        <div style="display: flex; gap: 1.5rem; align-items: center;">
+                            <a href="https://suriline.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit SuriLine &nearr;</a>
+                        </div>
                     </div>
-                    <a href="https://suriline.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border: none; border-bottom: 1px solid var(--accent-gold); border-radius: 0; padding-left: 0; padding-right: 0;">Visit SuriLine &rarr;</a>
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;">
+                        <img src="./img/projects/project-1.jpg" alt="SuriLine" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9);">
+                    </div>
                 </div>
             </div>
-
-            <hr style="border: none; border-top: 1px solid var(--border-color);">
 
             <!-- Project 2: SuriKoers -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;">
-                <!-- Reversing order on desktop by grid auto-flow or just structural ordering -->
-                <div>
-                    <h2 class="font-serif italic" style="font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem;">SuriKoers</h2>
-                    <p style="font-size: 1.15rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 2rem; line-height: 1.6;">
-                        Simplifying currency exchange rates in Suriname. Providing a centralized, accurate dashboard to help individuals and businesses navigate local currency fluctuations.
-                    </p>
-                    <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                        <span class="tag">FinTech</span>
-                        <span class="tag">Data Aggregation</span>
+            <div class="bento-item" style="padding: 2.5rem;">
+                <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 3rem; align-items: center;">
+                    <div>
+                        <span style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">FinTech Platform</span>
+                        <h2 class="font-serif" style="font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem;">SuriKoers</h2>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 1.75rem; line-height: 1.6;">
+                            Simplifying currency exchange rates in Suriname. Provides a centralized, accurate dashboard to help individuals and local businesses navigate exchange rate fluctuations transparently.
+                        </p>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                            <span class="tag">FinTech</span>
+                            <span class="tag">Data Aggregation</span>
+                            <span class="tag">Real-Time Analytics</span>
+                        </div>
+                        <a href="https://surikoers.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Visit SuriKoers &nearr;</a>
                     </div>
-                    <a href="https://surikoers.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border: none; border-bottom: 1px solid var(--accent-gold); border-radius: 0; padding-left: 0; padding-right: 0;">Visit SuriKoers &rarr;</a>
-                </div>
-                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; position: relative;">
-                    <!-- Placeholder -->
-                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 2rem; color: var(--accent-amber); font-style: italic; opacity: 0.5;">SuriKoers</div>
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;">
+                        <span class="font-serif italic" style="font-size: 2rem; color: var(--accent-amber); opacity: 0.6;">SuriKoers</span>
+                    </div>
                 </div>
             </div>
-
-            <hr style="border: none; border-top: 1px solid var(--border-color);">
 
             <!-- Project 3: Cyberpad Studio -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;">
-                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; position: relative;">
-                    <!-- Placeholder -->
-                    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 2rem; color: var(--text-secondary); font-style: italic; opacity: 0.5;">Cyberpad Studio</div>
-                </div>
-                <div>
-                    <h2 class="font-serif italic" style="font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem;">Cyberpad Studio</h2>
-                    <p style="font-size: 1.15rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 2rem; line-height: 1.6;">
-                        A futuristic online studio where music producers can not only make beats but instantly share, remix, and collaborate with creators globally.
-                    </p>
-                    <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                        <span class="tag">Web Audio API</span>
-                        <span class="tag">Collaboration</span>
+            <div class="bento-item" style="padding: 2.5rem;">
+                <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 3rem; align-items: center;">
+                    <div>
+                        <span style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Audio Web Studio</span>
+                        <h2 class="font-serif" style="font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem;">Cyberpad Studio</h2>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 1.75rem; line-height: 1.6;">
+                            A futuristic online studio where music producers can make beats, showcase their sound kits, and collaborate with creators globally in real time.
+                        </p>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                            <span class="tag">Web Audio API</span>
+                            <span class="tag">Music Tech</span>
+                            <span class="tag">Real-time Collab</span>
+                        </div>
+                        <a href="https://cyberpad-studio.vercel.app/html/login.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Visit Cyberpad Studio &nearr;</a>
                     </div>
-                    <a href="https://cyberpad-studio.vercel.app/html/login.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border: none; border-bottom: 1px solid var(--accent-gold); border-radius: 0; padding-left: 0; padding-right: 0;">Visit Cyberpad &rarr;</a>
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;">
+                        <span class="font-serif italic" style="font-size: 2rem; color: var(--text-secondary); opacity: 0.6;">Cyberpad Studio</span>
+                    </div>
                 </div>
             </div>
 
+        </section>
+
+        <!-- GitHub Repositories Section -->
+        <section class="section-divider">
+            <span class="section-label">Open Source &amp; Code</span>
+            
+            <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+                <div>
+                    <h3 class="font-serif" style="font-size: 2rem; color: var(--text-primary); margin-bottom: 0.5rem;">GitHub Repositories</h3>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; max-width: 600px;">
+                        Explore my public repositories, algorithm experiments, data structures, and open-source contributions.
+                    </p>
+                </div>
+                <div>
+                    <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View GitHub Profile &nearr;</a>
+                </div>
+            </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Wiraash Mathoera. Designed by WM &middot; Made in Suriname.</p>
+        <div class="container footer-content">
+            <div>
+                <p style="color: var(--text-primary); font-weight: 500; margin-bottom: 0.25rem;">Wiraash Mathoera</p>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/wiraash-mathoera-642bb9243/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="./contact.html">Email</a>
+                <a href="./about.html">About</a>
+            </div>
         </div>
     </footer>
     
