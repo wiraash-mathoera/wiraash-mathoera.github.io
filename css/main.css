@@ -466,25 +466,3 @@ footer {
   transform: scale(1.03);
   filter: brightness(1.02) contrast(1.04);
 }
-
-/* Glass Floating Meta Overlay inside Card */
-.hero-portrait-meta {
-  margin-top: 10px;
-  padding: 0.6rem 0.8rem;
-  background: rgba(16, 15, 13, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-}
-
-.hero-portrait-meta-title {
-  color: var(--text-primary);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
