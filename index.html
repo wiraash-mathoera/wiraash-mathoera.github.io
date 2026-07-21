@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Creative Developer</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body data-theme="dark">
+    <!-- Live Background -->
+    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; opacity: 0.7;"></canvas>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="./index.html" class="nav-logo">Wiraash Mathoera</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="./index.html" class="nav-link">Home</a></li>
+                <li><a href="./about.html" class="nav-link">About</a></li>
+                <li><a href="./work.html" class="nav-link">Work</a></li>
+                <li><a href="./contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                        ◐
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 140px; padding-bottom: 80px;">
+        <!-- Hero Section -->
+        <section style="display: flex; flex-direction: column; gap: 3rem; margin-bottom: 8rem;">
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <img src="./img/profile.jpg" alt="Wiraash Mathoera" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-color);">
+                <span class="tag" style="margin: 0; font-size: 1rem; border-color: var(--text-primary); color: var(--text-primary);">Wiraash Mathoera</span>
+            </div>
+            
+            <div style="max-width: 800px;">
+                <h1 style="margin-bottom: 2rem; font-size: clamp(3rem, 7vw, 6rem); letter-spacing: -0.05em; line-height: 1.05;">
+                    Software Engineer <br> & Founder.
+                </h1>
+                <p style="color: var(--text-secondary); font-size: 1.25rem; max-width: 600px; margin-bottom: 3rem; line-height: 1.6;">
+                    I navigate the intersection of code, design, and product development. My passion is making technology accessible to everyone by building platforms that solve real problems with elegant solutions.
+                </p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="./work.html" style="padding: 1rem 2rem; background: var(--text-primary); color: var(--bg-color); font-weight: 600; border-radius: 4px; font-size: 1.1rem;">View Projects</a>
+                    <a href="./about.html" style="padding: 1rem 2rem; border: 1px solid var(--border-color); color: var(--text-primary); font-weight: 600; border-radius: 4px; font-size: 1.1rem;">Read Story</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem;">
+                <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); margin-bottom: 1rem;">Core Focus</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <span class="tag">Software Engineering</span>
+                    <span class="tag">Project Coordination</span>
+                    <span class="tag">Digital Innovation</span>
+                    <span class="tag">Product Development</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Roles Section -->
+        <section>
+            <h2 style="font-size: 2.5rem; letter-spacing: -0.03em; margin-bottom: 3rem;">Current Roles</h2>
+            <div>
+                <div class="card" style="display: flex; flex-direction: column; gap: 1rem; padding: 2.5rem 0;">
+                    <h3 style="font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em;">Project & Test Coordinator <span style="color: var(--text-secondary); font-weight: 400;">at Telesur</span></h3>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 650px;">Ensuring quality and coordination in telecom projects. Bridging the gap between technical execution and business needs.</p>
+                </div>
+                <div class="card" style="display: flex; flex-direction: column; gap: 1rem; padding: 2.5rem 0;">
+                    <h3 style="font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em;">Founder <span style="color: var(--text-secondary); font-weight: 400;">at SuriLine, SuriKoers & Cyberpad Studio</span></h3>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 650px;">Building digital infrastructure for local discovery and creating futuristic online studios for music producers.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer container">
+        <div class="footer-text">© 2026 Wiraash Mathoera</div>
+        <div class="footer-socials">
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

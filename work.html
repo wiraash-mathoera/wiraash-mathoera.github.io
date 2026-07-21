@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | Wiraash Mathoera</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/work.css">
+</head>
+<body data-theme="dark">
+    <!-- Live Background -->
+    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; opacity: 0.7;"></canvas>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="./index.html" class="nav-logo">Wiraash Mathoera</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="./index.html" class="nav-link">Home</a></li>
+                <li><a href="./about.html" class="nav-link">About</a></li>
+                <li><a href="./work.html" class="nav-link">Work</a></li>
+                <li><a href="./contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                        ◐
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 140px; padding-bottom: 80px;">
+        <div style="max-width: 800px;">
+            <h1 style="font-size: clamp(3rem, 6vw, 5rem); letter-spacing: -0.04em; margin-bottom: 1.5rem; line-height: 1.1;">Selected Work</h1>
+            <p style="color: var(--text-secondary); font-size: 1.25rem; margin-bottom: 5rem; line-height: 1.6;">
+                A collection of platforms I've founded and built to solve real-world problems in Suriname and beyond.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 4rem;">
+                <!-- Project 1 -->
+                <article class="card" style="border: none; padding: 0; border-bottom: 1px solid var(--border-color); padding-bottom: 4rem;">
+                    <h2 style="font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.03em; margin-bottom: 1rem;">SuriLine</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; max-width: 700px;">
+                        Suriname's digital guide. A comprehensive platform to find phone numbers, locations, and important services quickly and easily, bridging the gap between physical businesses and digital presence.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Tailwind CSS</span>
+                    </div>
+                    <a href="https://suriline.vercel.app/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; padding-bottom: 0.2rem; border-bottom: 2px solid var(--text-primary); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">
+                        Visit Site ↗
+                    </a>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="card" style="border: none; padding: 0; border-bottom: 1px solid var(--border-color); padding-bottom: 4rem;">
+                    <h2 style="font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.03em; margin-bottom: 1rem;">SuriKoers</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; max-width: 700px;">
+                        A streamlined tool for tracking and simplifying currency exchange rates in Suriname, providing real-time financial utility for locals and businesses.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">API Integration</span>
+                        <span class="tag">CSS3</span>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="card" style="border: none; padding: 0;">
+                    <h2 style="font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.03em; margin-bottom: 1rem;">Cyberpad Studio</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; max-width: 700px;">
+                        A futuristic online studio where music producers can not only make beats but also instantly share, collaborate, and connect globally.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="tag">Web Audio API</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">WebSockets</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer container">
+        <div class="footer-text">© 2026 Wiraash Mathoera</div>
+        <div class="footer-socials">
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
