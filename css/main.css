@@ -81,7 +81,8 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   position: relative;
   z-index: 1;
 }
@@ -144,9 +145,9 @@ body {
 }
 
 /* Main Content Padding */
-main {
+main.container {
   min-height: calc(100vh - 160px);
-  padding-top: 130px;
+  padding-top: 140px;
   padding-bottom: 80px;
 }
 
