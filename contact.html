@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/contact.css">
 </head>
+
 <body data-theme="dark">
     <!-- Live Background -->
-    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -3; pointer-events: none; opacity: 0.15;"></canvas>
+    <canvas id="bg-canvas"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -3; pointer-events: none; opacity: 0.15;"></canvas>
 
     <!-- Ambient Glowing Orbs -->
     <div class="ambient-container">
@@ -21,7 +24,12 @@
     <header class="navbar">
         <div class="container nav-container" style="justify-content: flex-end;">
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
             </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="./index.html" class="nav-link">Home</a></li>
@@ -36,63 +44,56 @@
         <!-- Contact Section -->
         <section style="padding-top: 2rem; margin-bottom: 5rem;">
             <span class="section-label">Connect &amp; Collaborate</span>
-            <h1 class="font-serif" style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 500; line-height: 1.1; color: var(--text-primary); margin-bottom: 1.5rem;">
+            <h1 class="font-serif"
+                style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 500; line-height: 1.1; color: var(--text-primary); margin-bottom: 1.5rem;">
                 Get in <span class="italic text-accent">Touch</span>
             </h1>
-            <p style="font-size: 1.25rem; font-weight: 300; color: var(--text-secondary); max-width: 650px; line-height: 1.6;">
-                Whether you want to partner with SuriLine, discuss a software project, or chat about tech innovation in Suriname, my inbox is always open.
+            <p
+                style="font-size: 1.25rem; font-weight: 300; color: var(--text-secondary); max-width: 650px; line-height: 1.6;">
+                Whether you want to partner with SuriLine, discuss a software project, or chat about tech innovation in
+                Suriname, my inbox is always open.
             </p>
         </section>
 
-        <section class="section-divider">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem;">
-                
-                <!-- Direct Links -->
-                <div>
-                    <h3 class="font-serif" style="font-size: 1.75rem; color: var(--text-primary); margin-bottom: 1.5rem;">Digital Channels</h3>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 2rem;">
-                        <div>
-                            <p style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem;">GitHub Repositories</p>
-                            <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: none; font-size: 1.15rem; font-weight: 500; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-primary)'">github.com/wiraash-mathoera &nearr;</a>
-                        </div>
-                        <div>
-                            <p style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem;">LinkedIn Profile</p>
-                            <a href="https://www.linkedin.com/in/wiraash-mathoera-642bb9243/" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: none; font-size: 1.15rem; font-weight: 500; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-primary)'">linkedin.com/in/wiraash-mathoera-642bb9243/ &nearr;</a>
-                        </div>
-                        <div>
-                            <p style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem;">Email Address</p>
-                            <a href="mailto:Wiraash-mathoera@hotmail.com" style="color: var(--text-primary); text-decoration: none; font-size: 1.15rem; font-weight: 500; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-primary)'">Wiraash-mathoera@hotmail.com</a>
-                        </div>
-                        <div>
-                            <p style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem;">Phone / Mobile</p>
-                            <a href="tel:+59708790204" style="color: var(--text-primary); text-decoration: none; font-size: 1.15rem; font-weight: 500; transition: color 0.2s ease;" onmouseover="this.style.color='var(--accent-gold)'" onmouseout="this.style.color='var(--text-primary)'">+597 08790204 / 0367858</a>
-                        </div>
+        <section class="section-divider" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 4rem 0;">
+            <h2 class="font-serif" style="font-size: clamp(2rem, 4vw, 3.2rem); color: var(--text-primary); margin-bottom: 1rem; font-weight: 500;">
+                Let's get <span class="italic text-accent">connected</span>
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 1.15rem; max-width: 500px; margin-bottom: 3.5rem; font-weight: 300; line-height: 1.6;">
+                I'm active on these platforms. Drop a message or explore my work.
+            </p>
+            
+            <div class="social-connect-grid">
+                <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank" rel="noopener noreferrer" class="social-connect-card" aria-label="GitHub">
+                    <div class="social-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                            <path d="M9 18c-4.51 2-5-2-7-2" />
+                        </svg>
                     </div>
-                </div>
+                    <span class="social-label-text">GitHub</span>
+                </a>
 
-                <!-- Message Form -->
-                <div>
-                    <h3 class="font-serif" style="font-size: 1.75rem; color: var(--text-primary); margin-bottom: 1.5rem;">Send a Message</h3>
-                    
-                    <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                        <div>
-                            <label for="name" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em;">Name</label>
-                            <input type="text" id="name" name="name" required style="width: 100%; padding: 1rem; background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-primary); border-radius: 6px; font-family: var(--font-sans); outline: none; transition: border-color 0.2s ease;" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--card-border)'">
-                        </div>
-                        <div>
-                            <label for="email" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em;">Email</label>
-                            <input type="email" id="email" name="email" required style="width: 100%; padding: 1rem; background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-primary); border-radius: 6px; font-family: var(--font-sans); outline: none; transition: border-color 0.2s ease;" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--card-border)'">
-                        </div>
-                        <div>
-                            <label for="message" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em;">Message</label>
-                            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 1rem; background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-primary); border-radius: 6px; font-family: var(--font-sans); resize: vertical; outline: none; transition: border-color 0.2s ease;" onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--card-border)'"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
-                            Send Message &rarr;
-                        </button>
-                    </form>
-                </div>
+                <a href="https://www.linkedin.com/in/wiraash-mathoera-642bb9243/" target="_blank" rel="noopener noreferrer" class="social-connect-card" aria-label="LinkedIn">
+                    <div class="social-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect width="4" height="12" x="2" y="9" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </div>
+                    <span class="social-label-text">LinkedIn</span>
+                </a>
+
+                <a href="mailto:w.mathoera@unasat.sr" class="social-connect-card" aria-label="Email">
+                    <div class="social-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                    </div>
+                    <span class="social-label-text">Email</span>
+                </a>
             </div>
         </section>
     </main>
@@ -101,19 +102,23 @@
     <footer>
         <div class="container footer-content">
             <div>
-                <p style="font-size: 0.85rem; color: var(--text-secondary);">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">&copy; 2026 Wiraash Mathoera &middot; Made
+                    in Suriname.</p>
             </div>
 
             <div class="footer-social">
-                <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://www.linkedin.com/in/wiraash-mathoera-642bb9243/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="./contact.html">Email</a>
+                <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank"
+                    rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/wiraash-mathoera-642bb9243/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:w.mathoera@unasat.sr">Email</a>
                 <a href="./about.html">About</a>
             </div>
         </div>
     </footer>
-    
+
     <script src="./js/background.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
