@@ -652,6 +652,7 @@ footer {
   border-radius: 8px;
   overflow: hidden;
   aspect-ratio: 4/3;
+  position: relative;
 }
 .github-repo-card {
   background: var(--card-bg);
