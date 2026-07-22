@@ -101,3 +101,16 @@
 .project-link:hover svg {
     transform: translateX(3px) translateY(-3px);
 }
+
+/* Custom Bento Project Image styles */
+.project-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+  transition: transform 0.4s ease;
+}
+
+.bento-item:hover .project-card-img {
+  transform: scale(1.03);
+}
