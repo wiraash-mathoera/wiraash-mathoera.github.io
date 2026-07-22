@@ -1,6 +1,13 @@
+// Remove no-js class immediately for JS-enabled users
+document.documentElement.classList.remove('no-js');
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Fade in page on load
-  document.body.classList.add('fade-in');
+  const mainElement = document.querySelector('main');
+
+  // Fade in main content on load
+  if (mainElement) {
+    mainElement.classList.add('fade-in');
+  }
 
   // Handle smooth page exit transitions
   const links = document.querySelectorAll('a');
@@ -22,13 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
 
-        e.preventDefault();
-        document.body.classList.remove('fade-in');
-        document.body.classList.add('fade-out');
-        
-        setTimeout(() => {
-          window.location.href = href;
-        }, 300);
+        if (mainElement) {
+          e.preventDefault();
+          mainElement.classList.remove('fade-in');
+          mainElement.classList.add('fade-out');
+          
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300);
+        }
       });
     }
   });

@@ -36,15 +36,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+main {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
-body.fade-in {
+/* Fallback when JS is disabled */
+.no-js main {
+  opacity: 1 !important;
+}
+
+main.fade-in {
   opacity: 1;
 }
 
-body.fade-out {
+main.fade-out {
   opacity: 0;
 }
 
@@ -55,6 +63,14 @@ body.fade-out {
 
 .navbar {
   view-transition-name: main-navbar;
+}
+
+#bg-canvas {
+  view-transition-name: bg-canvas;
+}
+
+.ambient-container {
+  view-transition-name: ambient-container;
 }
 
 /* Typography Utilities */
