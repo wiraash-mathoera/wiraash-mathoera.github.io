@@ -11,8 +11,7 @@
 
 <body data-theme="dark">
     <!-- Live Background -->
-    <canvas id="bg-canvas"
-        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -3; pointer-events: none; opacity: 0.15;"></canvas>
+    <canvas id="bg-canvas"></canvas>
 
     <!-- Ambient Glowing Orbs -->
     <div class="ambient-container">
@@ -22,7 +21,7 @@
 
     <!-- Header & Navigation -->
     <header class="navbar">
-        <div class="container nav-container" style="justify-content: flex-end;">
+        <div class="container nav-container nav-right">
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -42,12 +41,12 @@
 
     <main class="container">
         <!-- Contact Section -->
-        <section style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 2rem 0 4rem 0;">
-            <span class="section-label" style="margin-bottom: 2rem;">Connect &amp; Collaborate</span>
-            <h1 class="font-serif" style="font-size: clamp(3rem, 6vw, 4.5rem); color: var(--text-primary); margin-bottom: 1.5rem; font-weight: 500; line-height: 1.1;">
+        <section class="contact-header-section">
+            <span class="section-label mb-2">Connect &amp; Collaborate</span>
+            <h1 class="font-serif page-title">
                 Let's get <span class="italic text-accent">connected</span>
             </h1>
-            <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 600px; margin-bottom: 4rem; font-weight: 300; line-height: 1.7;">
+            <p class="page-subtitle mb-2">
                 Whether you want to partner with SuriLine, discuss a software project, or chat about tech innovation in Suriname, feel free to reach out on any of these platforms.
             </p>
             
@@ -90,7 +89,7 @@
     <footer>
         <div class="container footer-content">
             <div>
-                <p style="font-size: 0.85rem; color: var(--text-secondary);">&copy; 2026 Wiraash Mathoera &middot; Made
+                <p class="footer-copyright">&copy; 2026 Wiraash Mathoera &middot; Made
                     in Suriname.</p>
             </div>
 

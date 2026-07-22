@@ -9,7 +9,7 @@
 </head>
 <body data-theme="dark">
     <!-- Live Background -->
-    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -3; pointer-events: none; opacity: 0.15;"></canvas>
+    <canvas id="bg-canvas"></canvas>
 
     <!-- Ambient Glowing Orbs -->
     <div class="ambient-container">
@@ -19,7 +19,7 @@
 
     <!-- Header & Navigation -->
     <header class="navbar">
-        <div class="container nav-container" style="justify-content: flex-end;">
+        <div class="container nav-container nav-right">
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
             </button>
@@ -34,82 +34,82 @@
 
     <main class="container">
         <!-- Header -->
-        <section style="padding-top: 2rem; margin-bottom: 4rem; max-width: 800px;">
+        <section class="work-header-section">
             <span class="section-label">Selected Works &amp; Software</span>
-            <h1 class="font-serif" style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 500; line-height: 1.1; color: var(--text-primary); margin-bottom: 1.5rem;">
+            <h1 class="font-serif page-title">
                 Digital <span class="italic text-accent">Infrastructure</span>
             </h1>
-            <p style="font-size: 1.25rem; font-weight: 300; color: var(--text-secondary); line-height: 1.6;">
+            <p class="page-subtitle">
                 Platforms and open-source software built to solve real problems and modernize digital discovery in Suriname.
             </p>
         </section>
 
         <!-- Flagship Projects Section -->
-        <section style="display: grid; grid-template-columns: 1fr; gap: 4rem; margin-bottom: 6rem;">
+        <section class="projects-grid-large">
             
             <!-- Project 1: SuriLine -->
-            <div class="bento-item" style="padding: 2.5rem;">
-                <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 3rem; align-items: center;">
+            <div class="bento-item project-bento-item">
+                <div class="project-grid-inner">
                     <div>
-                        <span style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Flagship Platform</span>
-                        <h2 class="font-serif" style="font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem;">SuriLine</h2>
-                        <p style="font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 1.75rem; line-height: 1.6;">
+                        <span class="project-category">Flagship Platform</span>
+                        <h2 class="font-serif project-title">SuriLine</h2>
+                        <p class="project-desc">
                             Suriname's modern digital guide. A directory application unifying phone numbers, physical locations, emergency services, and government agency contact info into a lightning-fast, accessible web app.
                         </p>
-                        <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                        <div class="project-tags">
                             <span class="tag">Full-Stack</span>
                             <span class="tag">Product Design</span>
                             <span class="tag">Directory Infrastructure</span>
                         </div>
-                        <div style="display: flex; gap: 1.5rem; align-items: center;">
+                        <div class="project-actions">
                             <a href="https://suriline.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit SuriLine &nearr;</a>
                         </div>
                     </div>
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;">
+                    <div class="project-image-wrapper">
                         <img src="./img/suriline.png" alt="SuriLine" class="project-card-img">
                     </div>
                 </div>
             </div>
 
             <!-- Project 2: SuriKoers -->
-            <div class="bento-item" style="padding: 2.5rem;">
-                <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 3rem; align-items: center;">
+            <div class="bento-item project-bento-item">
+                <div class="project-grid-inner">
                     <div>
-                        <span style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">FinTech Platform</span>
-                        <h2 class="font-serif" style="font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem;">SuriKoers</h2>
-                        <p style="font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 1.75rem; line-height: 1.6;">
+                        <span class="project-category">FinTech Platform</span>
+                        <h2 class="font-serif project-title">SuriKoers</h2>
+                        <p class="project-desc">
                             Simplifying currency exchange rates in Suriname. Provides a centralized, accurate dashboard to help individuals and local businesses navigate exchange rate fluctuations transparently.
                         </p>
-                        <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                        <div class="project-tags">
                             <span class="tag">FinTech</span>
                             <span class="tag">Data Aggregation</span>
                             <span class="tag">Real-Time Analytics</span>
                         </div>
                         <a href="https://whatsapp.com/channel/0029VbCgk0QAe5ViNQCmtB3d" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Visit SuriKoers &nearr;</a>
                     </div>
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;">
+                    <div class="project-image-wrapper">
                         <img src="./img/surikoers.png" alt="SuriKoers" class="project-card-img">
                     </div>
                 </div>
             </div>
 
             <!-- Project 3: Cyberpad Studio -->
-            <div class="bento-item" style="padding: 2.5rem;">
-                <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 3rem; align-items: center;">
+            <div class="bento-item project-bento-item">
+                <div class="project-grid-inner">
                     <div>
-                        <span style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Audio Web Studio</span>
-                        <h2 class="font-serif" style="font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem;">Cyberpad Studio</h2>
-                        <p style="font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; margin-bottom: 1.75rem; line-height: 1.6;">
+                        <span class="project-category">Audio Web Studio</span>
+                        <h2 class="font-serif project-title">Cyberpad Studio</h2>
+                        <p class="project-desc">
                             A futuristic online studio where music producers can make beats, showcase their sound kits, and collaborate with creators globally in real time.
                         </p>
-                        <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                        <div class="project-tags">
                             <span class="tag">Web Audio API</span>
                             <span class="tag">Music Tech</span>
                             <span class="tag">Real-time Collab</span>
                         </div>
                         <a href="https://cyberpad-studio.vercel.app/html/login.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Visit Cyberpad Studio &nearr;</a>
                     </div>
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;">
+                    <div class="project-image-wrapper">
                         <img src="./img/cyberpad.jpg" alt="Cyberpad Studio" class="project-card-img">
                     </div>
                 </div>
@@ -121,10 +121,10 @@
         <section class="section-divider">
             <span class="section-label">Open Source &amp; Code</span>
             
-            <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+            <div class="github-repo-card">
                 <div>
-                    <h3 class="font-serif" style="font-size: 2rem; color: var(--text-primary); margin-bottom: 0.5rem;">GitHub Repositories</h3>
-                    <p style="font-size: 1.1rem; color: var(--text-secondary); font-weight: 300; max-width: 600px;">
+                    <h3 class="font-serif github-repo-title">GitHub Repositories</h3>
+                    <p class="github-repo-desc">
                         Explore my public repositories, algorithm experiments, data structures, and open-source contributions.
                     </p>
                 </div>
@@ -139,7 +139,7 @@
     <footer>
         <div class="container footer-content">
             <div>
-                <p style="font-size: 0.85rem; color: var(--text-secondary);">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
+                <p class="footer-copyright">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
             </div>
 
             <div class="footer-social">

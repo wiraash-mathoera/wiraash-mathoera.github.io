@@ -9,7 +9,7 @@
 </head>
 <body data-theme="dark">
     <!-- Live Background -->
-    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -3; pointer-events: none; opacity: 0.15;"></canvas>
+    <canvas id="bg-canvas"></canvas>
 
     <!-- Ambient Glowing Orbs -->
     <div class="ambient-container">
@@ -19,7 +19,7 @@
 
     <!-- Header & Navigation -->
     <header class="navbar">
-        <div class="container nav-container" style="justify-content: flex-end;">
+        <div class="container nav-container nav-right">
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
             </button>
@@ -34,40 +34,40 @@
 
     <main class="container">
         <!-- Profile Header -->
-        <section style="padding-top: 2rem; margin-bottom: 5rem;">
+        <section class="about-header-section">
             <span class="section-label">Biography &amp; Background</span>
-            <h1 class="font-serif" style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 500; line-height: 1.1; color: var(--text-primary); margin-bottom: 2rem;">
+            <h1 class="font-serif page-title">
                 Driven by solutions, <span class="italic text-accent">powered by code.</span>
             </h1>
             
-            <div style="color: var(--text-secondary); font-size: 1.2rem; font-weight: 300; line-height: 1.8; max-width: 800px; display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="about-intro">
                 <p>
                     I am a hardworking, motivated software engineering student and product developer based in Suriname. Whether collaborating in multidisciplinary teams or building independently, I focus on solving complex real-world problems and turning daily friction into opportunities for digital innovation.
                 </p>
                 <p>
-                    As the founder of <strong style="color: var(--text-primary); font-weight: 500;">SuriLine</strong>, <strong style="color: var(--text-primary); font-weight: 500;">SuriKoers</strong>, and <strong style="color: var(--text-primary); font-weight: 500;">Cyberpad Studio</strong>, my mission is to modernize digital infrastructure in Suriname and create seamless, accessible platforms for everyday users, local businesses, and creators.
+                    As the founder of <strong class="text-highlight">SuriLine</strong>, <strong class="text-highlight">SuriKoers</strong>, and <strong class="text-highlight">Cyberpad Studio</strong>, my mission is to modernize digital infrastructure in Suriname and create seamless, accessible platforms for everyday users, local businesses, and creators.
                 </p>
             </div>
         </section>
 
         <!-- The Origin Story & Mission -->
         <section class="section-divider">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem;">
+            <div class="about-grid">
                 <div>
-                    <span class="section-label" style="margin-bottom: 1rem;">The Origin Story</span>
-                    <h2 class="font-serif" style="font-size: 2rem; color: var(--text-primary); margin-bottom: 1.5rem;">Why I started <span class="italic text-accent">SuriLine</span></h2>
-                    <p style="font-size: 1.05rem; color: var(--text-secondary); font-weight: 300; line-height: 1.7; margin-bottom: 1rem;">
-                        Working as a Project &amp; Test Coordinator at Telesur, and completing my Bachelor in Software Engineering, I noticed recurring friction in daily life in Suriname. Finding businesses, emergency contacts, or government agencies was harder than it needed to be.
+                    <span class="section-label mb-1">The Origin Story</span>
+                    <h2 class="font-serif section-title">Why I started <span class="italic text-accent">SuriLine</span></h2>
+                    <p class="about-text">
+                        The idea for SuriLine sparked from a genuine frustration. Finding reliable, up-to-date information in Suriname—from a local business phone number to the exact location of a government agency or an emergency service—was incredibly fragmented. People relied heavily on Facebook pages, word of mouth, or outdated phone books.
                     </p>
-                    <p style="font-size: 1.05rem; color: var(--text-secondary); font-weight: 300; line-height: 1.7;">
+                    <p class="about-text">
                         SuriLine was born to build a modern digital guide making local discovery fast, transparent, and accessible for everyone.
                     </p>
                 </div>
 
                 <div>
-                    <span class="section-label" style="margin-bottom: 1rem;">The Mission</span>
-                    <h2 class="font-serif" style="font-size: 2rem; color: var(--text-primary); margin-bottom: 1.5rem;">Digital Accessibility</h2>
-                    <p class="font-serif" style="font-size: 1.5rem; line-height: 1.5; color: var(--text-primary);">
+                    <span class="section-label mb-1">The Mission</span>
+                    <h2 class="font-serif section-title">Digital Accessibility</h2>
+                    <p class="font-serif about-quote">
                         "To organize Suriname's local information and make it universally accessible and useful, bridging the gap between physical businesses and modern digital presence."
                     </p>
                 </div>
@@ -78,20 +78,20 @@
         <section class="section-divider">
             <span class="section-label">Education &amp; Qualifications</span>
             
-            <div style="display: flex; flex-direction: column; gap: 2.5rem; max-width: 800px;">
-                <div style="display: grid; grid-template-columns: 160px 1fr; gap: 2rem;">
-                    <div style="font-size: 0.9rem; color: var(--accent-gold); font-weight: 700;">2021 &mdash; Present</div>
+            <div class="timeline-container">
+                <div class="timeline-row">
+                    <div class="timeline-date-active">2021 &mdash; Present</div>
                     <div>
-                        <h3 class="font-serif" style="font-size: 1.35rem; color: var(--text-primary);">B.Sc. Software Engineering</h3>
-                        <p style="font-size: 0.95rem; color: var(--text-secondary);">University of Applied Sciences and Technology Suriname (UNASAT)</p>
+                        <h3 class="font-serif timeline-title">B.Sc. Software Engineering</h3>
+                        <p class="timeline-subtitle">University of Applied Sciences and Technology Suriname (UNASAT)</p>
                     </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 160px 1fr; gap: 2rem;">
-                    <div style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 700;">2016 &mdash; 2019</div>
+                <div class="timeline-row">
+                    <div class="timeline-date">2016 &mdash; 2019</div>
                     <div>
-                        <h3 class="font-serif" style="font-size: 1.35rem; color: var(--text-primary);">HAVO Diploma</h3>
-                        <p style="font-size: 0.95rem; color: var(--text-secondary);">Henry N. Hassankhan Scholengemeenschap</p>
+                        <h3 class="font-serif timeline-title">HAVO Diploma</h3>
+                        <p class="timeline-subtitle">Henry N. Hassankhan Scholengemeenschap</p>
                     </div>
                 </div>
             </div>
@@ -101,10 +101,10 @@
         <section class="section-divider">
             <span class="section-label">Software, ERP &amp; CMS Tools</span>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem;">
+            <div class="skills-grid">
                 <div>
-                    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-bottom: 1rem;">CMS &amp; Web Builders</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <h3 class="font-serif skills-category-title">CMS &amp; Web Builders</h3>
+                    <div class="skills-list">
                         <span class="tag">WordPress</span>
                         <span class="tag">Shopify</span>
                         <span class="tag">Squarespace</span>
@@ -112,13 +112,13 @@
                         <span class="tag">Glide</span>
                         <span class="tag">Zarla</span>
                         <span class="tag">Lovable.dev</span>
-                        <span class="tag">Expo / Expo Cloud</span>
+                        <span class="tag">Expo</span>
                     </div>
                 </div>
 
                 <div>
-                    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-bottom: 1rem;">ERP &amp; Office Software</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <h3 class="font-serif skills-category-title">ERP &amp; Office Software</h3>
+                    <div class="skills-list">
                         <span class="tag">SAP ERP</span>
                         <span class="tag">QuickBooks</span>
                         <span class="tag">MS Office</span>
@@ -130,22 +130,22 @@
                 </div>
 
                 <div>
-                    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-bottom: 1rem;">Languages</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                        <span class="tag">Dutch (Native)</span>
-                        <span class="tag">English (Fluent)</span>
+                    <h3 class="font-serif skills-category-title">Languages</h3>
+                    <div class="skills-list">
+                        <span class="tag">Dutch</span>
+                        <span class="tag">English</span>
                         <span class="tag">Sranan Tongo</span>
                         <span class="tag">Hindi</span>
                     </div>
                 </div>
 
                 <div>
-                    <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-bottom: 1rem;">Programming</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">JavaScript</span>
+                    <h3 class="font-serif skills-category-title">Programming</h3>
+                    <div class="skills-list">
                         <span class="tag">Python</span>
-                        <span class="tag">SQL</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML5 / CSS3</span>
+                        <span class="tag">React</span>
                     </div>
                 </div>
             </div>
@@ -156,7 +156,7 @@
     <footer>
         <div class="container footer-content">
             <div>
-                <p style="font-size: 0.85rem; color: var(--text-secondary);">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
+                <p class="footer-copyright">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
             </div>
 
             <div class="footer-social">

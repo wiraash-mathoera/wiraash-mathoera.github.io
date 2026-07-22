@@ -10,8 +10,7 @@
 
 <body data-theme="dark">
     <!-- Live Interactive Background Canvas -->
-    <canvas id="bg-canvas"
-        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -3; pointer-events: none; opacity: 0.15;"></canvas>
+    <canvas id="bg-canvas"></canvas>
 
     <!-- Ambient Glowing Orbs -->
     <div class="ambient-container">
@@ -21,7 +20,7 @@
 
     <!-- Header & Navigation -->
     <header class="navbar">
-        <div class="container nav-container" style="justify-content: flex-end;">
+        <div class="container nav-container nav-right">
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -41,35 +40,29 @@
 
     <main class="container">
         <!-- Hero Section (Paul Bakaus Grid Layout) -->
-        <section
-            style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 3.5rem; align-items: start; margin-bottom: 5rem;">
-            <div style="position: relative; z-index: 10;">
-                <h1 class="font-serif"
-                    style="font-size: clamp(3.5rem, 7.5vw, 6.5rem); font-weight: 500; line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: -0.02em;">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="font-serif hero-title">
                     Wiraash <span class="italic">Mathoera</span>
                 </h1>
-                <p
-                    style="font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 400; color: var(--text-primary); margin-bottom: 2rem; letter-spacing: -0.01em;">
+                <p class="hero-subtitle">
                     Product Engineer &amp; Digital Innovator.
                 </p>
 
-                <div
-                    style="color: var(--text-secondary); font-size: 1.15rem; max-width: 650px; margin-bottom: 2.5rem; line-height: 1.8; font-weight: 300;">
-                    <p style="margin-bottom: 1.25rem;">
-                        I move between <strong style="color: var(--text-primary); font-weight: 500;">code</strong>,
-                        <strong style="color: var(--text-primary); font-weight: 500;">design</strong>, and <strong
-                            style="color: var(--text-primary); font-weight: 500;">product</strong>. I am currently
+                <div class="hero-description">
+                    <p>
+                        I move between <strong class="text-highlight">code</strong>,
+                        <strong class="text-highlight">design</strong>, and <strong class="text-highlight">product</strong>. I am currently
                         completing my Software Engineering degree at UNASAT while working as a Coordinator at Telesur.
                     </p>
                     <p>
-                        As founder of <strong style="color: var(--text-primary); font-weight: 500;">SuriLine</strong>,
-                        <strong style="color: var(--text-primary); font-weight: 500;">SuriKoers</strong>, and <strong
-                            style="color: var(--text-primary); font-weight: 500;">Cyberpad Studio</strong>, I build
+                        As founder of <strong class="text-highlight">SuriLine</strong>,
+                        <strong class="text-highlight">SuriKoers</strong>, and <strong class="text-highlight">Cyberpad Studio</strong>, I build
                         digital platforms that solve real problems with simple, elegant solutions.
                     </p>
                 </div>
 
-                <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+                <div class="hero-actions">
                     <a href="./work.html" class="btn btn-primary">Explore Projects &rarr;</a>
                     <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank"
                         rel="noopener noreferrer" class="btn btn-outline">GitHub Repositories &nearr;</a>
@@ -94,7 +87,7 @@
                 <div class="bento-item">
                     <div>
                         <h2 class="bento-title">
-                            <span style="color: var(--accent-gold);">✦</span>
+                            <span class="text-accent">✦</span>
                             <a href="https://suriline.vercel.app/" target="_blank"
                                 rel="noopener noreferrer">SuriLine</a>
                         </h2>
@@ -115,7 +108,7 @@
                 <div class="bento-item">
                     <div>
                         <h2 class="bento-title">
-                            <span style="color: var(--accent-gold);">✦</span>
+                            <span class="text-accent">✦</span>
                             <a href="https://whatsapp.com/channel/0029VbCgk0QAe5ViNQCmtB3d" target="_blank"
                                 rel="noopener noreferrer">SuriKoers</a>
                         </h2>
@@ -136,7 +129,7 @@
                 <div class="bento-item">
                     <div>
                         <h2 class="bento-title">
-                            <span style="color: var(--accent-gold);">✦</span>
+                            <span class="text-accent">✦</span>
                             <a href="https://cyberpad-studio.vercel.app/html/login.html" target="_blank"
                                 rel="noopener noreferrer">Cyberpad Studio</a>
                         </h2>
@@ -157,7 +150,7 @@
                 <div class="bento-item">
                     <div>
                         <h2 class="bento-title">
-                            <span style="color: var(--accent-gold);">✦</span>
+                            <span class="text-accent">✦</span>
                             <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank"
                                 rel="noopener noreferrer">GitHub Projects</a>
                         </h2>
@@ -226,7 +219,7 @@
     <footer>
         <div class="container footer-content">
             <div>
-                <p style="font-size: 0.85rem; color: var(--text-secondary);">&copy; 2026 Wiraash Mathoera &middot; Made
+                <p class="footer-copyright">&copy; 2026 Wiraash Mathoera &middot; Made
                     in Suriname.</p>
             </div>
 
