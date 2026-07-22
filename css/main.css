@@ -36,6 +36,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+/* Native View Transitions (Chrome / Edge) */
+@view-transition {
+  navigation: auto;
+}
+
+.navbar {
+  view-transition-name: main-navbar;
 }
 
 /* Typography Utilities */

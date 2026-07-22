@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Fade in page on load
+  document.body.classList.add('fade-in');
+
+  // Handle smooth page exit transitions
+  const links = document.querySelectorAll('a');
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    const target = link.getAttribute('target');
+    
+    // Only intercept local, non-empty, non-hash, non-mail links that don't open in a new tab
+    if (
+      href &&
+      !href.startsWith('http') &&
+      !href.startsWith('#') &&
+      !href.startsWith('mailto:') &&
+      target !== '_blank'
+    ) {
+      link.addEventListener('click', (e) => {
+        // Skip if browser supports view transitions natively to avoid conflicts
+        if (document.startViewTransition) {
+          return;
+        }
+
+        e.preventDefault();
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        
+        setTimeout(() => {
+          window.location.href = href;
+        }, 300);
+      });
+    }
+  });
+
   const navbar = document.querySelector('.navbar');
 
   const handleScroll = () => {
