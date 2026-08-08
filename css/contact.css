@@ -106,3 +106,15 @@
 .social-connect-card:hover .social-label-text {
   color: var(--text-primary);
 }
+
+@media (max-width: 768px) {
+  .social-connect-grid {
+    gap: 1.5rem;
+  }
+
+  .social-connect-card {
+    width: 140px;
+    height: 140px;
+  }
+}
+
