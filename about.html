@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/features.css">
 </head>
 <body data-theme="dark">
     <!-- Live Background -->
@@ -49,6 +50,13 @@
                 <li><a href="./work.html" class="nav-link">Work</a></li>
                 <li><a href="./about.html" class="nav-link active">About</a></li>
                 <li><a href="./contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="cmd-pill" id="cmd-trigger-pill" aria-label="Open command menu (Ctrl+K)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        <span>Search</span>
+                        <kbd>⌘K</kbd>
+                    </button>
+                </li>
             </ul>
         </div>
     </header>
@@ -177,7 +185,7 @@
     <footer>
         <div class="container footer-content">
             <div>
-                <p class="footer-copyright" id="footer-made-in"><span>&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</span></p>
+                <p class="footer-copyright">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
             </div>
 
             <div class="footer-social">
@@ -191,6 +199,7 @@
     
     <script src="./js/background.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/easter-eggs.js"></script>
+    <script src="./js/features.js"></script>
+    <script src="./js/command-menu.js"></script>
 </body>
 </html>

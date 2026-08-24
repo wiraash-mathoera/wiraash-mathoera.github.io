@@ -1,0 +1,586 @@
+/* ============================================================
+   features.css — All 7 Feature Components
+   ============================================================ */
+
+/* ── 1. STATUS WIDGET ─────────────────────────────────────── */
+.status-widget {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(8px);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+  animation: status-pulse 2.5s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes status-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+  70%  { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.status-location { font-weight: 500; color: var(--text-primary); }
+.status-sep      { color: rgba(255, 255, 255, 0.2); }
+.status-time     { font-family: var(--font-sans); font-variant-numeric: tabular-nums; }
+.status-avail    { color: #22c55e; font-weight: 500; }
+
+
+/* ── 2. CURRENCY TICKER ───────────────────────────────────── */
+.currency-ticker-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.75rem 0 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  overflow: hidden;
+}
+
+.ticker-live-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: status-pulse 2s infinite;
+}
+
+.currency-ticker {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  flex-wrap: wrap;
+  color: var(--text-secondary);
+}
+
+.ticker-pair {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.ticker-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ticker-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.ticker-change {
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.ticker-change.up   { color: #22c55e; }
+.ticker-change.down { color: #ef4444; }
+
+.ticker-sep {
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 0.9rem;
+}
+
+
+/* ── 3. AUDIO WAVEFORM PLAYER ─────────────────────────────── */
+.audio-player-wrap {
+  margin: 0.75rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.audio-waveform {
+  width: 100%;
+  height: 48px;
+  border-radius: 6px;
+  background: rgba(160, 80, 255, 0.06);
+  border: 1px solid rgba(160, 80, 255, 0.15);
+  display: block;
+}
+
+.audio-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  background: rgba(160, 80, 255, 0.1);
+  border: 1px solid rgba(160, 80, 255, 0.3);
+  border-radius: 6px;
+  color: #a050ff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  align-self: flex-start;
+}
+
+.audio-play-btn:hover {
+  background: rgba(160, 80, 255, 0.2);
+  border-color: rgba(160, 80, 255, 0.5);
+  box-shadow: 0 0 16px rgba(160, 80, 255, 0.2);
+}
+
+.audio-play-btn.playing {
+  background: rgba(160, 80, 255, 0.2);
+  border-color: #a050ff;
+  color: #c080ff;
+  animation: audio-pulse 1.5s infinite;
+}
+
+@keyframes audio-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(160, 80, 255, 0.3); }
+  50%       { box-shadow: 0 0 20px rgba(160, 80, 255, 0.5); }
+}
+
+
+/* ── 4. SPECS DRAWER ──────────────────────────────────────── */
+.specs-drawer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+  margin-bottom: 0;
+}
+
+.specs-drawer.open {
+  max-height: 300px;
+  opacity: 1;
+  margin-bottom: 1.25rem;
+}
+
+.specs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.specs-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.specs-key {
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-gold);
+}
+
+.specs-val {
+  color: var(--text-secondary);
+}
+
+.specs-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.specs-toggle:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.specs-toggle-icon {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 400;
+}
+
+
+/* ── 5. DEVICE MOCKUP SWITCHER ────────────────────────────── */
+.mockup-toggle-group {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  display: flex;
+  gap: 0.25rem;
+  z-index: 2;
+  background: rgba(16, 15, 13, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 0.2rem;
+  backdrop-filter: blur(8px);
+}
+
+.mockup-btn {
+  padding: 0.25rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.03em;
+}
+
+.mockup-btn:hover   { color: var(--text-primary); }
+.mockup-btn.active  {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+/* Mobile mockup frame effect */
+.project-image-wrapper.mockup-mobile {
+  max-width: 220px;
+  aspect-ratio: 9/16;
+  border-radius: 20px;
+  margin: 0 auto;
+  border-width: 6px;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.05), 0 20px 40px rgba(0,0,0,0.5);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-image-wrapper {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+
+/* ── 6. COPY EMAIL + vCARD ─────────────────────────────────── */
+.quick-contact-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.copy-email-btn,
+.vcard-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+}
+
+.copy-email-btn.copied {
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
+.copy-email-btn.copied:hover {
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
+
+/* ── 7. COMMAND PALETTE ───────────────────────────────────── */
+.cmd-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.cmd-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.cmd-pill kbd {
+  font-size: 0.65rem;
+  padding: 0.1rem 0.35rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+}
+
+/* Overlay */
+#cmd-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 9, 8, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+#cmd-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#cmd-panel {
+  width: 100%;
+  max-width: 580px;
+  background: rgba(20, 19, 17, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
+  overflow: hidden;
+  transform: scale(0.97) translateY(-8px);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#cmd-overlay.open #cmd-panel {
+  transform: scale(1) translateY(0);
+}
+
+#cmd-search-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+#cmd-search-icon {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+
+#cmd-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-primary);
+  caret-color: var(--accent-gold);
+}
+
+#cmd-input::placeholder { color: rgba(163, 156, 147, 0.5); }
+
+#cmd-esc-key {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  background: transparent;
+  transition: border-color 0.2s ease;
+}
+#cmd-esc-key:hover { border-color: rgba(255,255,255,0.25); }
+
+#cmd-results {
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.cmd-group-label {
+  padding: 0.5rem 0.75rem 0.25rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.cmd-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+  color: var(--text-primary);
+}
+
+.cmd-item:hover,
+.cmd-item.highlighted {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.cmd-item.highlighted .cmd-item-arrow {
+  opacity: 1;
+}
+
+.cmd-item-icon {
+  font-size: 1.1rem;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.cmd-item-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cmd-item-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.cmd-item-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.cmd-item-arrow {
+  color: var(--text-secondary);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  flex-shrink: 0;
+}
+
+.cmd-empty {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding: 2rem;
+}
+
+#cmd-footer {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 0.6rem 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+#cmd-footer kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 0.3rem;
+  font-size: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  font-family: var(--font-sans);
+  margin-right: 0.25rem;
+}
+
+/* Copy toast */
+#cmd-copy-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background: rgba(20, 19, 17, 0.97);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  color: #22c55e;
+  font-weight: 500;
+  z-index: 10001;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+  opacity: 0;
+}
+
+#cmd-copy-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cmd-pill { display: none; }
+
+  .status-widget {
+    font-size: 0.72rem;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .specs-item {
+    grid-template-columns: 80px 1fr;
+    font-size: 0.8rem;
+  }
+
+  #cmd-panel {
+    max-width: calc(100vw - 2rem);
+    margin: 0 1rem;
+  }
+
+  .quick-contact-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mockup-toggle-group { top: 0.4rem; right: 0.4rem; }
+}

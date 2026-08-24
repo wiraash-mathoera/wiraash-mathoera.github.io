@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/work.css">
+    <link rel="stylesheet" href="./css/features.css">
 </head>
 <body data-theme="dark">
     <!-- Live Background -->
@@ -49,6 +50,13 @@
                 <li><a href="./work.html" class="nav-link active">Work</a></li>
                 <li><a href="./about.html" class="nav-link">About</a></li>
                 <li><a href="./contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="cmd-pill" id="cmd-trigger-pill" aria-label="Open command menu (Ctrl+K)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        <span>Search</span>
+                        <kbd>⌘K</kbd>
+                    </button>
+                </li>
             </ul>
         </div>
     </header>
@@ -82,11 +90,27 @@
                             <span class="tag">Product Design</span>
                             <span class="tag">Directory Infrastructure</span>
                         </div>
+                        <!-- Specs Drawer -->
+                        <div class="specs-drawer" aria-hidden="true">
+                            <div class="specs-grid">
+                                <div class="specs-item"><span class="specs-key">Problem</span><span class="specs-val">Fragmented business &amp; service discovery across Suriname</span></div>
+                                <div class="specs-item"><span class="specs-key">Architecture</span><span class="specs-val">Full-stack edge deployment, search-indexed directory API</span></div>
+                                <div class="specs-item"><span class="specs-key">Stack</span><span class="specs-val">Next.js, Vercel, Algolia-style search, PostgreSQL</span></div>
+                                <div class="specs-item"><span class="specs-key">Impact</span><span class="specs-val">Thousands of queries across districts &amp; emergency services</span></div>
+                            </div>
+                        </div>
                         <div class="project-actions">
                             <a href="https://suriline.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit SuriLine &nearr;</a>
+                            <button class="specs-toggle" aria-expanded="false">
+                                <span class="specs-toggle-icon">+</span> Tech Specs
+                            </button>
                         </div>
                     </div>
                     <div class="project-image-wrapper">
+                        <div class="mockup-toggle-group">
+                            <button class="mockup-btn active" data-mode="desktop">Desktop</button>
+                            <button class="mockup-btn" data-mode="mobile">Mobile</button>
+                        </div>
                         <img src="./img/suriline.png" alt="SuriLine" class="project-card-img">
                     </div>
                 </div>
@@ -106,9 +130,27 @@
                             <span class="tag">Data Aggregation</span>
                             <span class="tag">Real-Time Analytics</span>
                         </div>
-                        <a href="https://whatsapp.com/channel/0029VbCgk0QAe5ViNQCmtB3d" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Visit SuriKoers &nearr;</a>
+                        <!-- Specs Drawer -->
+                        <div class="specs-drawer" aria-hidden="true">
+                            <div class="specs-grid">
+                                <div class="specs-item"><span class="specs-key">Problem</span><span class="specs-val">No centralized source for Suriname exchange rates</span></div>
+                                <div class="specs-item"><span class="specs-key">Architecture</span><span class="specs-val">WhatsApp Channel + automated data aggregation pipeline</span></div>
+                                <div class="specs-item"><span class="specs-key">Stack</span><span class="specs-val">WhatsApp Business API, data scraping, real-time updates</span></div>
+                                <div class="specs-item"><span class="specs-key">Impact</span><span class="specs-val">Subscribers across SRD, USD, EUR &amp; BRL rate tracking</span></div>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://whatsapp.com/channel/0029VbCgk0QAe5ViNQCmtB3d" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Visit SuriKoers &nearr;</a>
+                            <button class="specs-toggle" aria-expanded="false">
+                                <span class="specs-toggle-icon">+</span> Tech Specs
+                            </button>
+                        </div>
                     </div>
                     <div class="project-image-wrapper">
+                        <div class="mockup-toggle-group">
+                            <button class="mockup-btn active" data-mode="desktop">Desktop</button>
+                            <button class="mockup-btn" data-mode="mobile">Mobile</button>
+                        </div>
                         <img src="./img/surikoers.png" alt="SuriKoers" class="project-card-img">
                     </div>
                 </div>
@@ -128,9 +170,27 @@
                             <span class="tag">Music Tech</span>
                             <span class="tag">Real-time Collab</span>
                         </div>
-                        <a href="https://cyberpad-studio.vercel.app/html/login.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Visit Cyberpad Studio &nearr;</a>
+                        <!-- Specs Drawer -->
+                        <div class="specs-drawer" aria-hidden="true">
+                            <div class="specs-grid">
+                                <div class="specs-item"><span class="specs-key">Problem</span><span class="specs-val">Fragmented beat production &amp; creator collaboration tools</span></div>
+                                <div class="specs-item"><span class="specs-key">Architecture</span><span class="specs-val">Web Audio API synthesis engine, real-time peer sessions</span></div>
+                                <div class="specs-item"><span class="specs-key">Stack</span><span class="specs-val">Vanilla JS, Web Audio API, WebSockets, Vercel</span></div>
+                                <div class="specs-item"><span class="specs-key">Impact</span><span class="specs-val">End-to-end music production &amp; sharing in a single tab</span></div>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://cyberpad-studio.vercel.app/html/login.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Visit Cyberpad Studio &nearr;</a>
+                            <button class="specs-toggle" aria-expanded="false">
+                                <span class="specs-toggle-icon">+</span> Tech Specs
+                            </button>
+                        </div>
                     </div>
                     <div class="project-image-wrapper">
+                        <div class="mockup-toggle-group">
+                            <button class="mockup-btn active" data-mode="desktop">Desktop</button>
+                            <button class="mockup-btn" data-mode="mobile">Mobile</button>
+                        </div>
                         <img src="./img/cyberpad.jpg" alt="Cyberpad Studio" class="project-card-img">
                     </div>
                 </div>
@@ -160,7 +220,7 @@
     <footer>
         <div class="container footer-content">
             <div>
-                <p class="footer-copyright" id="footer-made-in"><span>&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</span></p>
+                <p class="footer-copyright">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
             </div>
 
             <div class="footer-social">
@@ -174,6 +234,7 @@
     
     <script src="./js/background.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/easter-eggs.js"></script>
+    <script src="./js/features.js"></script>
+    <script src="./js/command-menu.js"></script>
 </body>
 </html>

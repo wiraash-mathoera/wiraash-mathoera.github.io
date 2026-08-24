@@ -117,3 +117,12 @@
 .bento-item:hover .project-card-img {
   transform: scale(1.03);
 }
+
+/* Project Action Row (CTA + Tech Specs toggle) */
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}

@@ -283,72 +283,42 @@ main.container {
 .bento-header {
   display: flex;
   align-items: center;
-  gap: 0.875rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Bento Project Icon Badge */
 .bento-icon {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: var(--text-primary);
-  background: rgba(255,255,255,0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.bento-item:hover .bento-icon {
-  transform: scale(1.08);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* SuriLine — electric teal */
-.bento-icon-suriline {
-  background: linear-gradient(135deg, rgba(0,200,180,0.18), rgba(0,120,120,0.08));
-  border-color: rgba(0,200,180,0.3);
-  color: #00c8b4;
-  box-shadow: 0 0 12px rgba(0,200,180,0.12);
-}
-.bento-item:hover .bento-icon-suriline {
-  box-shadow: 0 0 20px rgba(0,200,180,0.25);
+.bento-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* SuriKoers — warm amber/gold */
-.bento-icon-surikoers {
-  background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(150,100,10,0.08));
-  border-color: rgba(212,175,55,0.35);
-  color: var(--accent-gold);
-  box-shadow: 0 0 12px rgba(212,175,55,0.12);
-}
-.bento-item:hover .bento-icon-surikoers {
-  box-shadow: 0 0 20px rgba(212,175,55,0.25);
-}
-
-/* Cyberpad — purple/violet */
-.bento-icon-cyberpad {
-  background: linear-gradient(135deg, rgba(160,80,255,0.18), rgba(80,30,140,0.08));
-  border-color: rgba(160,80,255,0.3);
-  color: #a050ff;
-  box-shadow: 0 0 12px rgba(160,80,255,0.12);
-}
-.bento-item:hover .bento-icon-cyberpad {
-  box-shadow: 0 0 20px rgba(160,80,255,0.25);
-}
-
-/* GitHub — neutral white */
 .bento-icon-github {
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(180,180,180,0.04));
-  border-color: rgba(255,255,255,0.18);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--text-primary);
 }
-.bento-item:hover .bento-icon-github {
-  box-shadow: 0 0 16px rgba(255,255,255,0.1);
+
+.bento-item:hover .bento-icon {
+  transform: scale(1.06);
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
 .timeline-wrap {
@@ -587,16 +557,19 @@ footer {
   align-items: center;
   text-decoration: none;
   flex-shrink: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .nav-logo:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+  transform: scale(1.05);
 }
 .nav-logo-img {
-  height: 36px;
-  width: auto;
-  object-fit: contain;
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  object-fit: cover;
   display: block;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* Removed nav-right — now using space-between from .nav-container */
@@ -849,128 +822,4 @@ footer {
   align-items: center;
   text-align: center;
   padding: 2rem 0 4rem 0;
-}
-
-/* ================================================
-   EASTER EGG STYLES
-   ================================================ */
-
-/* --- Toast Notification --- */
-#ee-toast {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(120%);
-  background: rgba(16, 15, 13, 0.95);
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  border-radius: 12px;
-  padding: 1rem 1.75rem;
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  color: var(--text-primary);
-  z-index: 9999;
-  pointer-events: none;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 20px rgba(212,175,55,0.15);
-  white-space: nowrap;
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
-  opacity: 0;
-}
-#ee-toast.show {
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
-}
-#ee-toast .ee-toast-icon {
-  margin-right: 0.5rem;
-}
-
-/* --- Particle Canvas (Konami) --- */
-#ee-particle-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 9998;
-}
-
-/* --- Hero Name Glitch Effect --- */
-@keyframes ee-glitch-clip-1 {
-  0%   { clip-path: inset(10% 0 85% 0); transform: translate(-3px, 0); }
-  25%  { clip-path: inset(40% 0 43% 0); transform: translate(3px, 0); }
-  50%  { clip-path: inset(70% 0 15% 0); transform: translate(-2px, 0); }
-  75%  { clip-path: inset(20% 0 65% 0); transform: translate(2px, 0); }
-  100% { clip-path: inset(55% 0 30% 0); transform: translate(0, 0); }
-}
-@keyframes ee-glitch-clip-2 {
-  0%   { clip-path: inset(60% 0 20% 0); transform: translate(3px, 0); }
-  25%  { clip-path: inset(15% 0 70% 0); transform: translate(-3px, 0); }
-  50%  { clip-path: inset(80% 0 5%  0); transform: translate(2px, 0); }
-  75%  { clip-path: inset(35% 0 50% 0); transform: translate(-2px, 0); }
-  100% { clip-path: inset(5%  0 85% 0); transform: translate(0, 0); }
-}
-
-.ee-glitch-active {
-  position: relative;
-  animation: none;
-}
-.ee-glitch-active::before,
-.ee-glitch-active::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-family: var(--font-serif);
-  font-size: inherit;
-  font-weight: inherit;
-  font-style: inherit;
-  line-height: inherit;
-  color: var(--text-primary);
-  pointer-events: none;
-}
-.ee-glitch-active::before {
-  color: #00c8b4;
-  animation: ee-glitch-clip-1 0.4s steps(1) 3;
-}
-.ee-glitch-active::after {
-  color: #a050ff;
-  animation: ee-glitch-clip-2 0.4s steps(1) 3;
-}
-
-/* --- Cyan Mode Flash (logo click x5) --- */
-body.ee-cyan-mode {
-  --accent-gold: #00e5ff;
-  --accent-amber: #0091ea;
-}
-body.ee-cyan-mode .ambient-orb {
-  opacity: 0.2;
-}
-
-/* --- Suriname Flag Popup (footer click x3) --- */
-#ee-flag-popup {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: rgba(16, 15, 13, 0.96);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 14px;
-  padding: 1rem 1.5rem;
-  font-size: 1.1rem;
-  color: var(--text-primary);
-  z-index: 9999;
-  pointer-events: none;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-  transform: scale(0.7) translateY(20px);
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-#ee-flag-popup.show {
-  transform: scale(1) translateY(0);
-  opacity: 1;
 }

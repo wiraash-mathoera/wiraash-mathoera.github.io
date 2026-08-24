@@ -25,6 +25,7 @@
 
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/features.css">
 </head>
 
 <body data-theme="dark">
@@ -56,6 +57,13 @@
                 <li><a href="./work.html" class="nav-link">Work</a></li>
                 <li><a href="./about.html" class="nav-link">About</a></li>
                 <li><a href="./contact.html" class="nav-link active">Contact</a></li>
+                <li>
+                    <button class="cmd-pill" id="cmd-trigger-pill" aria-label="Open command menu (Ctrl+K)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        <span>Search</span>
+                        <kbd>⌘K</kbd>
+                    </button>
+                </li>
             </ul>
         </div>
     </header>
@@ -103,6 +111,18 @@
                     <span class="social-label-text">Email</span>
                 </a>
             </div>
+
+            <!-- Quick Contact Actions -->
+            <div class="quick-contact-actions">
+                <button class="btn btn-outline copy-email-btn" id="copy-email-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    <span class="copy-label">Copy Email</span>
+                </button>
+                <button class="btn btn-outline vcard-btn" id="download-vcard-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    Download vCard
+                </button>
+            </div>
         </section>
     </main>
 
@@ -110,7 +130,7 @@
     <footer>
         <div class="container footer-content">
             <div>
-                <p class="footer-copyright" id="footer-made-in"><span>&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</span></p>
+                <p class="footer-copyright">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
             </div>
 
             <div class="footer-social">
@@ -126,7 +146,8 @@
 
     <script src="./js/background.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/easter-eggs.js"></script>
+    <script src="./js/features.js"></script>
+    <script src="./js/command-menu.js"></script>
 </body>
 
 </html>

@@ -24,6 +24,7 @@
     <meta name="twitter:image:height" content="630">
 
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/features.css">
 </head>
 
 <body data-theme="dark">
@@ -55,6 +56,13 @@
                 <li><a href="./work.html" class="nav-link">Work</a></li>
                 <li><a href="./about.html" class="nav-link">About</a></li>
                 <li><a href="./contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="cmd-pill" id="cmd-trigger-pill" aria-label="Open command menu (Ctrl+K)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        <span>Search</span>
+                        <kbd>⌘K</kbd>
+                    </button>
+                </li>
             </ul>
         </div>
     </header>
@@ -63,7 +71,7 @@
         <!-- Hero Section (Paul Bakaus Grid Layout) -->
         <section class="hero-section">
             <div class="hero-content">
-                <h1 class="font-serif hero-title" id="hero-name">
+                <h1 class="font-serif hero-title">
                     Wiraash <span class="italic">Mathoera</span>
                 </h1>
                 <p class="hero-subtitle">
@@ -88,6 +96,16 @@
                     <a href="https://github.com/wiraash-mathoera?tab=repositories" target="_blank"
                         rel="noopener noreferrer" class="btn btn-outline">GitHub Repositories &nearr;</a>
                 </div>
+
+                <!-- Status Widget -->
+                <div class="status-widget">
+                    <span class="status-dot"></span>
+                    <span class="status-location">Paramaribo, Suriname</span>
+                    <span class="status-sep">·</span>
+                    <span id="status-widget-time" class="status-time">--:--</span>
+                    <span class="status-sep">·</span>
+                    <span class="status-avail">Open for collaborations</span>
+                </div>
             </div>
 
             <div class="hero-portrait-wrap">
@@ -107,7 +125,9 @@
                 <!-- Bento 1: SuriLine -->
                 <div class="bento-item">
                     <div class="bento-header">
-                        <div class="bento-icon bento-icon-suriline">SL</div>
+                        <div class="bento-icon">
+                            <img src="./img/suriline.png" alt="SuriLine" class="bento-icon-img">
+                        </div>
                         <h2 class="bento-title">
                             <a href="https://suriline.vercel.app/" target="_blank"
                                 rel="noopener noreferrer">SuriLine</a>
@@ -128,7 +148,9 @@
                 <!-- Bento 2: SuriKoers -->
                 <div class="bento-item">
                     <div class="bento-header">
-                        <div class="bento-icon bento-icon-surikoers">SK</div>
+                        <div class="bento-icon">
+                            <img src="./img/surikoers.png" alt="SuriKoers" class="bento-icon-img">
+                        </div>
                         <h2 class="bento-title">
                             <a href="https://whatsapp.com/channel/0029VbCgk0QAe5ViNQCmtB3d" target="_blank"
                                 rel="noopener noreferrer">SuriKoers</a>
@@ -138,6 +160,11 @@
                         Simplifying currency exchange rates in Suriname. Provides a centralized, accurate dashboard
                         to help individuals and local businesses monitor exchange rate changes in real time.
                     </p>
+                    <!-- Live Currency Ticker -->
+                    <div class="currency-ticker-wrap">
+                        <span class="ticker-live-dot"></span>
+                        <div id="currency-ticker" class="currency-ticker">Loading rates…</div>
+                    </div>
                     <div class="bento-meta">
                         <a href="https://whatsapp.com/channel/0029VbCgk0QAe5ViNQCmtB3d" target="_blank"
                             rel="noopener noreferrer">Live Site &nearr;</a>
@@ -149,7 +176,9 @@
                 <!-- Bento 3: Cyberpad Studio -->
                 <div class="bento-item">
                     <div class="bento-header">
-                        <div class="bento-icon bento-icon-cyberpad">CP</div>
+                        <div class="bento-icon">
+                            <img src="./img/cyberpad.jpg" alt="Cyberpad Studio" class="bento-icon-img">
+                        </div>
                         <h2 class="bento-title">
                             <a href="https://cyberpad-studio.vercel.app/html/login.html" target="_blank"
                                 rel="noopener noreferrer">Cyberpad Studio</a>
@@ -159,6 +188,14 @@
                         A futuristic online studio where music producers not only produce beats, but can instantly
                         share, showcase, and collaborate in a unified digital workspace.
                     </p>
+                    <!-- Audio Waveform Player -->
+                    <div class="audio-player-wrap">
+                        <canvas id="audio-waveform" class="audio-waveform" width="280" height="48"></canvas>
+                        <button id="audio-play-btn" class="audio-play-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                            Preview Beat
+                        </button>
+                    </div>
                     <div class="bento-meta">
                         <a href="https://cyberpad-studio.vercel.app/html/login.html" target="_blank"
                             rel="noopener noreferrer">Live Site &nearr;</a>
@@ -242,7 +279,7 @@
     <footer>
         <div class="container footer-content">
             <div>
-                <p class="footer-copyright" id="footer-made-in"><span>&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</span></p>
+                <p class="footer-copyright">&copy; 2026 Wiraash Mathoera &middot; Made in Suriname.</p>
             </div>
 
             <div class="footer-social">
@@ -258,7 +295,8 @@
 
     <script src="./js/background.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/easter-eggs.js"></script>
+    <script src="./js/features.js"></script>
+    <script src="./js/command-menu.js"></script>
 </body>
 
 </html>
