@@ -1,28 +1,12 @@
 /**
  * features.js
- * Powers: Status Widget (Paramaribo Time), Specs Drawer, Device Mockup Switcher, Copy Email & vCard
+ * Powers: Specs Drawer, Device Mockup Switcher, Copy Email & vCard
  */
 
 (function () {
   'use strict';
 
-  /* ── 1. STATUS WIDGET & PARAMARIBO TIME ── */
-  function initStatusWidget() {
-    const widget = document.getElementById('status-widget-time');
-    if (!widget) return;
-
-    function updateTime() {
-      const now = new Date();
-      const pbo = new Date(now.toLocaleString('en-US', { timeZone: 'America/Paramaribo' }));
-      const h = String(pbo.getHours()).padStart(2, '0');
-      const m = String(pbo.getMinutes()).padStart(2, '0');
-      widget.textContent = `${h}:${m}`;
-    }
-    updateTime();
-    setInterval(updateTime, 30000);
-  }
-
-  /* ── 2. TECH SPECS DRAWER ── */
+  /* ── 1. TECH SPECS DRAWER ── */
   function initSpecsDrawer() {
     document.querySelectorAll('.specs-toggle').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -109,7 +93,6 @@
 
   /* ── BOOT ── */
   document.addEventListener('DOMContentLoaded', () => {
-    initStatusWidget();
     initSpecsDrawer();
     initMockupSwitcher();
     initContactActions();
