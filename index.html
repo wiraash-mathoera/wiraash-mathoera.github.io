@@ -25,6 +25,7 @@
 
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/features.css">
+    <link rel="stylesheet" href="./css/easter-eggs.css">
 </head>
 
 <body data-theme="dark">
@@ -56,13 +57,6 @@
                 <li><a href="./work.html" class="nav-link">Work</a></li>
                 <li><a href="./about.html" class="nav-link">About</a></li>
                 <li><a href="./contact.html" class="nav-link">Contact</a></li>
-                <li>
-                    <button class="cmd-pill" id="cmd-trigger-pill" aria-label="Open command menu (Ctrl+K)">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                        <span>Search</span>
-                        <kbd>⌘K</kbd>
-                    </button>
-                </li>
             </ul>
         </div>
     </header>
@@ -160,11 +154,6 @@
                         Simplifying currency exchange rates in Suriname. Provides a centralized, accurate dashboard
                         to help individuals and local businesses monitor exchange rate changes in real time.
                     </p>
-                    <!-- Live Currency Ticker -->
-                    <div class="currency-ticker-wrap">
-                        <span class="ticker-live-dot"></span>
-                        <div id="currency-ticker" class="currency-ticker">Loading rates…</div>
-                    </div>
                     <div class="bento-meta">
                         <a href="https://whatsapp.com/channel/0029VbCgk0QAe5ViNQCmtB3d" target="_blank"
                             rel="noopener noreferrer">Live Site &nearr;</a>
@@ -188,14 +177,6 @@
                         A futuristic online studio where music producers not only produce beats, but can instantly
                         share, showcase, and collaborate in a unified digital workspace.
                     </p>
-                    <!-- Audio Waveform Player -->
-                    <div class="audio-player-wrap">
-                        <canvas id="audio-waveform" class="audio-waveform" width="280" height="48"></canvas>
-                        <button id="audio-play-btn" class="audio-play-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-                            Preview Beat
-                        </button>
-                    </div>
                     <div class="bento-meta">
                         <a href="https://cyberpad-studio.vercel.app/html/login.html" target="_blank"
                             rel="noopener noreferrer">Live Site &nearr;</a>
@@ -296,7 +277,7 @@
     <script src="./js/background.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/features.js"></script>
-    <script src="./js/command-menu.js"></script>
+    <script src="./js/easter-eggs.js"></script>
 </body>
 
 </html>
