@@ -105,8 +105,9 @@
   const THEMES = [
     {
       id: 'gold',
-      name: 'Paramaribo Gold',
-      subtitle: 'Signature amber & gold luxury',
+      name: 'Original (Paramaribo Gold)',
+      subtitle: 'Default signature amber & gold luxury',
+      isDefault: true,
       accent: '#d4af37',
       rgb: '212, 175, 55',
       accent2: '#f59e0b',
@@ -155,7 +156,31 @@
     }
   ];
 
+  function resetToOriginal() {
+    const root = document.documentElement;
+    root.style.removeProperty('--accent-gold');
+    root.style.removeProperty('--accent-amber');
+    root.style.removeProperty('--border-glow');
+
+    const orb1 = document.querySelector('.orb-1');
+    const orb2 = document.querySelector('.orb-2');
+    if (orb1) orb1.style.background = '';
+    if (orb2) orb2.style.background = '';
+
+    if (window.liveBackground && typeof window.liveBackground.setThemeColor === 'function') {
+      window.liveBackground.setThemeColor(212, 175, 55);
+    }
+
+    localStorage.removeItem('dsa26_aura_theme');
+    showToast('👑', 'Original Atmosphere Restored', 'Paramaribo Gold (Default) is active.');
+  }
+
   function applyTheme(theme) {
+    if (theme.isDefault) {
+      resetToOriginal();
+      return;
+    }
+
     const root = document.documentElement;
     root.style.setProperty('--accent-gold', theme.accent);
     root.style.setProperty('--accent-amber', theme.accent2);
@@ -189,14 +214,20 @@
               <div class="ee-theme-tag">SECRET AURA STUDIO</div>
               <h3 class="ee-theme-title font-serif">Select Atmosphere</h3>
             </div>
-            <button id="ee-theme-close" class="ee-theme-close-btn" aria-label="Close">&times;</button>
+            <div class="ee-theme-header-actions">
+              <button id="ee-theme-reset-btn" class="ee-theme-reset-btn" title="Reset to Original Default">↺ Reset Original</button>
+              <button id="ee-theme-close" class="ee-theme-close-btn" aria-label="Close">&times;</button>
+            </div>
           </div>
           <div class="ee-theme-list">
             ${THEMES.map(t => `
-              <button class="ee-theme-card" data-theme-id="${t.id}">
+              <button class="ee-theme-card ${t.isDefault ? 'ee-theme-default-card' : ''}" data-theme-id="${t.id}">
                 <span class="ee-theme-swatch" style="background: linear-gradient(135deg, ${t.accent}, ${t.accent2});"></span>
                 <div class="ee-theme-info">
-                  <span class="ee-theme-name">${t.name}</span>
+                  <div class="ee-theme-name-row">
+                    <span class="ee-theme-name">${t.name}</span>
+                    ${t.isDefault ? '<span class="ee-default-tag">ORIGINAL</span>' : ''}
+                  </div>
                   <span class="ee-theme-desc">${t.subtitle}</span>
                 </div>
                 <span class="ee-theme-arrow">&nearr;</span>
@@ -204,6 +235,7 @@
             `).join('')}
           </div>
           <div class="ee-theme-footer">
+            <button id="ee-theme-reset-footer-btn" class="ee-theme-footer-reset">↺ Restore Original Default</button>
             <span>Themes save across all pages automatically.</span>
           </div>
         </div>
@@ -213,13 +245,23 @@
       modal.querySelector('.ee-theme-backdrop').addEventListener('click', closeThemeStudio);
       modal.querySelector('#ee-theme-close').addEventListener('click', closeThemeStudio);
 
+      const handleReset = () => {
+        resetToOriginal();
+        closeThemeStudio();
+      };
+
+      modal.querySelector('#ee-theme-reset-btn').addEventListener('click', handleReset);
+      modal.querySelector('#ee-theme-reset-footer-btn').addEventListener('click', handleReset);
+
       modal.querySelectorAll('.ee-theme-card').forEach(btn => {
         btn.addEventListener('click', () => {
           const tid = btn.getAttribute('data-theme-id');
           const t = THEMES.find(item => item.id === tid);
           if (t) {
             applyTheme(t);
-            showToast('🎨', `Aura Changed: ${t.name}`, t.subtitle);
+            if (!t.isDefault) {
+              showToast('🎨', `Aura Changed: ${t.name}`, t.subtitle);
+            }
             closeThemeStudio();
           }
         });
@@ -241,7 +283,7 @@
   // Restore saved theme on initial page load
   function restoreSavedTheme() {
     const saved = localStorage.getItem('dsa26_aura_theme');
-    if (saved) {
+    if (saved && saved !== 'gold') {
       const t = THEMES.find(item => item.id === saved);
       if (t) applyTheme(t);
     }
@@ -414,29 +456,38 @@
   window.addEventListener('trigger-suriname-star', triggerSurinameStar);
   window.addEventListener('open-hints-modal', openHintsModal);
 
-  // Injects subtle floating "✦ Hints" badge & initializes console
-  function injectHintsButton() {
-    // Inject floating discrete button in footer / bottom corner
-    let btn = document.getElementById('ee-floating-hint-btn');
-    if (!btn) {
-      btn = document.createElement('button');
-      btn.id = 'ee-floating-hint-btn';
-      btn.className = 'ee-floating-hint-btn';
-      btn.setAttribute('aria-label', 'Easter Egg Hints');
-      btn.title = 'View Easter Egg Hints';
-      btn.innerHTML = `
-        <span class="ee-hint-sparkle">✦</span>
-        <span class="ee-hint-btn-label">Hints</span>
-      `;
-      document.body.appendChild(btn);
-      btn.addEventListener('click', openHintsModal);
-    }
+  // Attach discreet footer click trigger for hints
+  function attachFooterHintsTrigger() {
+    // Look for footer-copyright elements across pages
+    const footers = document.querySelectorAll('.footer-copyright');
+    footers.forEach(p => {
+      // Wrap or add a discreet clickable star
+      if (!p.querySelector('.ee-footer-trigger')) {
+        const span = document.createElement('span');
+        span.className = 'ee-footer-trigger';
+        span.title = '✦ Discover portfolio secrets';
+        span.setAttribute('role', 'button');
+        span.setAttribute('tabindex', '0');
+        span.innerHTML = ' <span class="ee-footer-sparkle">✦</span>';
+        span.addEventListener('click', (e) => {
+          e.preventDefault();
+          openHintsModal();
+        });
+        span.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openHintsModal();
+          }
+        });
+        p.appendChild(span);
+      }
+    });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
     restoreSavedTheme();
     printConsoleHints();
-    injectHintsButton();
+    attachFooterHintsTrigger();
   });
 
 })();
