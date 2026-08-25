@@ -564,12 +564,12 @@ footer {
   transform: scale(1.05);
 }
 .nav-logo-img {
-  height: 38px;
-  width: 38px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Removed nav-right — now using space-between from .nav-container */
