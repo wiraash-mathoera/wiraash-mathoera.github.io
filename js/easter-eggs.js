@@ -75,29 +75,24 @@
       document.body.appendChild(scanline);
       setTimeout(() => scanline.remove(), 1600);
 
-      // Add blueprint HUD if not present
-      let hud = document.getElementById('ee-blueprint-hud');
-      if (!hud) {
-        hud = document.createElement('div');
-        hud.id = 'ee-blueprint-hud';
-        hud.innerHTML = `
-          <div class="ee-hud-inner">
-            <span class="ee-hud-dot"></span>
-            <span class="ee-hud-title">📐 ARCHITECT CAD MODE</span>
-            <span class="ee-hud-sep">|</span>
-            <span class="ee-hud-info">SCALE: 1:1 • GRID: 24px</span>
-            <button id="ee-hud-close" class="ee-hud-btn" title="Exit Blueprint Mode">EXIT [ESC / B]</button>
-          </div>
-        `;
-        document.body.appendChild(hud);
-        hud.querySelector('#ee-hud-close').addEventListener('click', () => toggleBlueprintMode(false));
+      // Add a discreet floating exit pill (crucial for mobile touch users)
+      let exitBtn = document.getElementById('ee-blueprint-exit-pill');
+      if (!exitBtn) {
+        exitBtn = document.createElement('button');
+        exitBtn.id = 'ee-blueprint-exit-pill';
+        exitBtn.className = 'ee-blueprint-exit-pill';
+        exitBtn.innerHTML = 'Exit Blueprint &times;';
+        exitBtn.setAttribute('aria-label', 'Exit Blueprint Mode');
+        document.body.appendChild(exitBtn);
+        exitBtn.addEventListener('click', () => toggleBlueprintMode(false));
       }
-      hud.classList.add('show');
-      showToast('📐', 'Architect Blueprint Mode Activated', 'Viewing underlying grid systems & component dimensions. Press [B] or [ESC] to exit.');
+      exitBtn.classList.add('show');
+
+      showToast('📐', 'Architect Blueprint Mode', 'Viewing grid systems & component dimensions. Tap Exit or press [B] / [ESC].');
     } else {
       document.body.classList.remove('blueprint-mode');
-      const hud = document.getElementById('ee-blueprint-hud');
-      if (hud) hud.classList.remove('show');
+      const exitBtn = document.getElementById('ee-blueprint-exit-pill');
+      if (exitBtn) exitBtn.classList.remove('show');
     }
   }
 
@@ -331,7 +326,7 @@
                 <div class="ee-hint-name">Golden Star Constellation</div>
                 <p class="ee-hint-desc">Whisper the name of the motherland to see the particles align into a golden starlight constellation.</p>
                 <div class="ee-hint-trigger-row">
-                  <span class="ee-hint-code">Type: <strong>suriname</strong> or <strong>sranan</strong></span>
+                  <span class="ee-hint-code">⌨️ Type: <strong>suriname</strong> | 📱 Double-tap background</span>
                   <button class="ee-hint-try-btn" id="try-star-btn">Try Now &nearr;</button>
                 </div>
               </div>
@@ -344,7 +339,7 @@
                 <div class="ee-hint-name">Architect Blueprint CAD Mode</div>
                 <p class="ee-hint-desc">Scan beneath the surface into technical CAD wireframes, component dimensions and grid layouts.</p>
                 <div class="ee-hint-trigger-row">
-                  <span class="ee-hint-code">Press key: <strong>B</strong> or type <strong>build</strong></span>
+                  <span class="ee-hint-code">⌨️ Key: <strong>B</strong> / <strong>build</strong> | 📱 Long-press logo</span>
                   <button class="ee-hint-try-btn" id="try-blueprint-btn">Try Now &nearr;</button>
                 </div>
               </div>
@@ -357,7 +352,7 @@
                 <div class="ee-hint-name">Secret Aura Studio</div>
                 <p class="ee-hint-desc">Unlock 5 custom luxury atmosphere color palettes across the entire website experience.</p>
                 <div class="ee-hint-trigger-row">
-                  <span class="ee-hint-code">Type: <strong>theme</strong> or <strong>aura</strong></span>
+                  <span class="ee-hint-code">⌨️ Type: <strong>theme</strong> | 📱 Triple-tap logo</span>
                   <button class="ee-hint-try-btn" id="try-theme-btn">Try Now &nearr;</button>
                 </div>
               </div>
@@ -365,7 +360,7 @@
           </div>
 
           <div class="ee-hints-footer">
-            <span>You can type these anywhere on the page at any time.</span>
+            <span>Tap "Try Now ↗" above or use keyboard / touch gestures anywhere.</span>
           </div>
         </div>
       `;
@@ -458,10 +453,8 @@
 
   // Attach discreet footer click trigger for hints
   function attachFooterHintsTrigger() {
-    // Look for footer-copyright elements across pages
     const footers = document.querySelectorAll('.footer-copyright');
     footers.forEach(p => {
-      // Wrap or add a discreet clickable star
       if (!p.querySelector('.ee-footer-trigger')) {
         const span = document.createElement('span');
         span.className = 'ee-footer-trigger';
@@ -484,10 +477,82 @@
     });
   }
 
+  // Touch Gestures for Mobile phones & tablets
+  function attachMobileTouchTriggers() {
+    // 1. Triple-tap & Long-press on Nav Logo
+    const logo = document.getElementById('nav-logo');
+    if (logo) {
+      let tapCount = 0;
+      let tapTimer = null;
+      let touchPressTimer = null;
+
+      logo.addEventListener('touchstart', () => {
+        touchPressTimer = setTimeout(() => {
+          if (navigator.vibrate) navigator.vibrate(50);
+          toggleBlueprintMode();
+        }, 550);
+      }, { passive: true });
+
+      logo.addEventListener('touchend', () => {
+        clearTimeout(touchPressTimer);
+        tapCount++;
+        clearTimeout(tapTimer);
+        tapTimer = setTimeout(() => {
+          if (tapCount >= 3) {
+            if (navigator.vibrate) navigator.vibrate(30);
+            openThemeStudio();
+          }
+          tapCount = 0;
+        }, 350);
+      }, { passive: true });
+
+      logo.addEventListener('touchmove', () => {
+        clearTimeout(touchPressTimer);
+      }, { passive: true });
+    }
+
+    // 2. Double-tap on canvas background for Suriname Star
+    const canvas = document.getElementById('bg-canvas');
+    if (canvas) {
+      let lastTap = 0;
+      canvas.addEventListener('touchend', () => {
+        const now = Date.now();
+        if (now - lastTap < 350) {
+          if (navigator.vibrate) navigator.vibrate(40);
+          triggerSurinameStar();
+        }
+        lastTap = now;
+      }, { passive: true });
+    }
+  }
+
+  // Floating discreet hints button (Visible in bottom right corner)
+  function injectFloatingHintsButton() {
+    let btn = document.getElementById('ee-floating-hint-btn');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.id = 'ee-floating-hint-btn';
+      btn.className = 'ee-floating-hint-btn';
+      btn.setAttribute('aria-label', 'Easter Egg Hints');
+      btn.title = 'View Easter Egg Hints';
+      btn.innerHTML = `
+        <span class="ee-hint-sparkle">✦</span>
+        <span class="ee-hint-btn-label">Hints</span>
+      `;
+      document.body.appendChild(btn);
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openHintsModal();
+      });
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     restoreSavedTheme();
     printConsoleHints();
+    injectFloatingHintsButton();
     attachFooterHintsTrigger();
+    attachMobileTouchTriggers();
   });
 
 })();

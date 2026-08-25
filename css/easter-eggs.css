@@ -140,72 +140,38 @@ body.blueprint-mode .btn-primary {
   100% { top: 100vh; opacity: 0; }
 }
 
-/* Blueprint HUD Bar */
-#ee-blueprint-hud {
+/* Mobile/Touch Blueprint Exit Pill */
+.ee-blueprint-exit-pill {
   position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: rgba(5, 20, 40, 0.95);
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(40px);
+  background: rgba(5, 20, 40, 0.92);
   border: 1px solid #00f0ff;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  z-index: 10000;
-  box-shadow: 0 8px 30px rgba(0, 240, 255, 0.25);
-  transform: translateY(-50px);
-  opacity: 0;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-}
-
-#ee-blueprint-hud.show {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.ee-hud-inner {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.75rem;
-  font-family: monospace;
+  border-radius: 100px;
   color: #00f0ff;
-}
-
-.ee-hud-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #00f0ff;
-  animation: status-pulse 1.5s infinite;
-}
-
-.ee-hud-title {
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
-
-.ee-hud-sep {
-  opacity: 0.4;
-}
-
-.ee-hud-info {
-  color: #7dd3fc;
-  font-size: 0.7rem;
-}
-
-.ee-hud-btn {
-  background: rgba(0, 240, 255, 0.15);
-  border: 1px solid #00f0ff;
-  border-radius: 4px;
-  color: #00f0ff;
-  padding: 0.25rem 0.6rem;
-  font-size: 0.68rem;
   font-family: monospace;
+  font-size: 0.8rem;
   font-weight: 700;
+  padding: 0.5rem 1.25rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  z-index: 10002;
+  box-shadow: 0 8px 24px rgba(0, 240, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ee-hud-btn:hover {
+.ee-blueprint-exit-pill.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.ee-blueprint-exit-pill:hover,
+.ee-blueprint-exit-pill:active {
   background: #00f0ff;
   color: #050d1a;
 }
@@ -435,29 +401,46 @@ body.blueprint-mode .btn-primary {
   color: var(--accent-gold);
 }
 
-/* ── 5. DISCREET FOOTER HINT TRIGGER ───────────────────────── */
-.ee-footer-trigger {
+/* ── 5. FLOATING DISCREET HINTS BUTTON ────────────────────── */
+.ee-floating-hint-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
   display: inline-flex;
   align-items: center;
-  margin-left: 0.35rem;
-  cursor: pointer;
-  vertical-align: middle;
-  outline: none;
-}
-
-.ee-footer-sparkle {
-  font-size: 0.75rem;
+  gap: 0.45rem;
+  padding: 0.45rem 0.95rem;
+  background: rgba(18, 17, 15, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
   color: var(--accent-gold);
-  opacity: 0.5;
-  transition: all 0.3s ease;
-  display: inline-block;
+  cursor: pointer;
+  z-index: 9999;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 12px rgba(212, 175, 55, 0.15);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ee-footer-trigger:hover .ee-footer-sparkle,
-.ee-footer-trigger:focus-visible .ee-footer-sparkle {
-  opacity: 1;
-  transform: scale(1.35) rotate(15deg);
-  text-shadow: 0 0 8px var(--accent-gold);
+.ee-floating-hint-btn:hover {
+  background: rgba(28, 26, 22, 0.95);
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.ee-hint-sparkle {
+  font-size: 0.85rem;
+  animation: ee-sparkle-spin 4s infinite linear;
+}
+
+@keyframes ee-sparkle-spin {
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.15); }
+  100% { transform: rotate(360deg) scale(1); }
 }
 
 /* ── 6. INTERACTIVE HINTS MODAL ───────────────────────────── */
@@ -644,17 +627,5 @@ body.blueprint-mode .btn-primary {
     max-width: calc(100vw - 2rem);
     border-radius: 16px;
     bottom: 1.5rem;
-  }
-
-  #ee-blueprint-hud {
-    top: auto;
-    bottom: 1.5rem;
-    right: 1rem;
-    left: 1rem;
-  }
-
-  .ee-floating-hint-btn {
-    bottom: 1rem;
-    right: 1rem;
   }
 }
